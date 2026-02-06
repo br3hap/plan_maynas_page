@@ -396,40 +396,54 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event listeners
     nextBtn.addEventListener('click', () => {
       nextSlide();
-      resetAutoPlay();
     });
     
     prevBtn.addEventListener('click', () => {
       prevSlide();
-      resetAutoPlay();
     });
     
-    // Auto play
-    let autoPlay = setInterval(nextSlide, 2000);
-    
-    function resetAutoPlay() {
-      clearInterval(autoPlay);
-      autoPlay = setInterval(nextSlide, 2000);
-    }
-    
-    // Pause on hover
-    const sliderContainer = document.querySelector('.slider-container');
-    if (sliderContainer) {
-      sliderContainer.addEventListener('mouseenter', () => clearInterval(autoPlay));
-      sliderContainer.addEventListener('mouseleave', () => {
-        autoPlay = setInterval(nextSlide, 2000);
+    // Click on slide to advance
+    slides.forEach((slide) => {
+      slide.style.cursor = 'pointer';
+      slide.addEventListener('click', () => {
+        nextSlide();
       });
-    }
+    });
     
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowLeft') {
         prevSlide();
-        resetAutoPlay();
       } else if (e.key === 'ArrowRight') {
         nextSlide();
-        resetAutoPlay();
       }
     });
   }
 });
+
+  // ============================================
+  // Image Modal
+  // ============================================
+  const galeriaItems = document.querySelectorAll('.galeria-item img');
+  
+  if (galeriaItems.length > 0) {
+    const modal = document.createElement('div');
+    modal.className = 'image-modal';
+    modal.innerHTML = '<img src="" alt="">';
+    document.body.appendChild(modal);
+    
+    const modalImg = modal.querySelector('img');
+    
+    galeriaItems.forEach(img => {
+      img.addEventListener('click', function(e) {
+        e.stopPropagation();
+        modalImg.src = this.src;
+        modalImg.alt = this.alt;
+        modal.classList.add('active');
+      });
+    });
+    
+    modal.addEventListener('click', function() {
+      this.classList.remove('active');
+    });
+  }
