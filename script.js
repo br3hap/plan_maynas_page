@@ -422,6 +422,55 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
   // ============================================
+  // Toggle Section Visibility (noticia1-4)
+  // ============================================
+  const toggleSections = ['noticia1', 'noticia2', 'noticia3', 'noticia4'];
+  
+  toggleSections.forEach(sectionId => {
+    const toggleLink = document.querySelector(`a[href="#${sectionId}"]`);
+    const section = document.querySelector(`#${sectionId}`);
+    
+    if (toggleLink && section) {
+      // Get the close button that exists in the HTML
+      const closeBtn = section.querySelector('.close-noticia-btn');
+      
+      // Hide the section initially
+      section.style.display = 'none';
+      
+      // Toggle on link click
+      toggleLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        if (section.style.display === 'none') {
+          // Hide all other toggle sections first
+          toggleSections.forEach(id => {
+            const otherSection = document.querySelector(`#${id}`);
+            if (otherSection && otherSection !== section) {
+              otherSection.style.display = 'none';
+            }
+          });
+          
+          section.style.display = 'block';
+          // Scroll to the section
+          window.scrollTo({
+            top: section.offsetTop - 70,
+            behavior: 'smooth'
+          });
+        } else {
+          section.style.display = 'none';
+        }
+      });
+      
+      // Close on button click
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+          section.style.display = 'none';
+        });
+      }
+    }
+  });
+
+  // ============================================
   // Image Modal
   // ============================================
   const galeriaItems = document.querySelectorAll('.galeria-item img');
