@@ -1303,6 +1303,18 @@ img {
   box-shadow: 0 4px 15px rgba(70, 138, 196, 0.4);
 }
 
+.btn-publica-pat {
+  background:#1398cc;
+  color:#ffffff;
+  box-shadow: 0 4px 15px rgba(70, 138, 196, 0.4);
+}
+
+.btn-publica-download {
+  background:#acbe07;
+  color:#ffffff;
+  box-shadow: 0 4px 15px rgba(70, 138, 196, 0.4);
+}
+
 
 .btn-visor:hover {
   transform: translateY(-3px);
@@ -1701,6 +1713,14 @@ img {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+.mapa-imagen img {
+  /* max-width: 400px; */
+  width: 150%;
+  height: 150%;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
 .consulta-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1855,7 +1875,7 @@ img {
 
 /* Footer */
 .footer {
-  background-color: var(--text-color);
+  background-color: #EC643B;
   color: white;
   padding: var(--spacing-lg) 0;
 }
@@ -2569,6 +2589,111 @@ img {
 
 .social-link:hover {
   transform: scale(1.1);
+}
+
+/* First Visit Popup */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.popup-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-image {
+  max-width: 100%;
+  max-height: 85vh;
+  border-radius: 8px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+}
+
+.popup-link {
+  display: block;
+}
+
+.popup-link:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
+}
+
+.popup-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: #ffffff;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.popup-close:hover {
+  background: #E16C49;
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.popup-action {
+  display: block;
+  margin: 15px auto 0;
+  padding: 12px 30px;
+  background: #E16C49;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.popup-action:hover {
+  background: #c55a3b;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .popup-content {
+    max-width: 95%;
+  }
+  
+  .popup-close {
+    top: -35px;
+    right: 50%;
+    transform: translateX(50%);
+  }
 }
 
 

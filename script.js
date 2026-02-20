@@ -1,6 +1,77 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   // ============================================
+  // First Visit Popup
+  // ============================================
+  const popup = document.getElementById('first-popup');
+  const popupClose = document.querySelector('.popup-close');
+  const popupImage = document.querySelector('.popup-image');
+  
+  // Function to show popup
+  function showPopup() {
+    if (popup) {
+      popup.classList.add('active');
+      popup.setAttribute('aria-hidden', 'false');
+    }
+  }
+  
+  // Show popup on page load (remove localStorage check for testing)
+  showPopup();
+  
+  // Close popup functions
+  function closePopup() {
+    if (popup) {
+      popup.classList.remove('active');
+      popup.setAttribute('aria-hidden', 'true');
+    }
+  }
+  
+  // Close popup when clicking on the link
+  const popupLink = document.querySelector('.popup-link');
+  if (popupLink) {
+    popupLink.addEventListener('click', function() {
+      closePopup();
+    });
+  }
+  
+  // Close on button click
+  if (popupClose) {
+    popupClose.addEventListener('click', closePopup);
+  }
+
+  // Close on action button click
+  const popupAction = document.querySelector('.popup-action');
+  if (popupAction) {
+    popupAction.addEventListener('click', function() {
+      closePopup();
+    });
+  }
+
+  // Close on clicking outside the image
+  if (popup) {
+    popup.addEventListener('click', function(e) {
+      if (e.target === popup) {
+        closePopup();
+      }
+    });
+  }
+  
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && popup && popup.classList.contains('active')) {
+      closePopup();
+    }
+  });
+  
+  // Also show popup when clicking on INICIO menu link
+  const inicioLink = document.querySelector('a[href="#inicio"]');
+  if (inicioLink) {
+    inicioLink.addEventListener('click', function(e) {
+      showPopup();
+    });
+  }
+
+  // ============================================
   // Reading Progress Indicator
   // ============================================
   const readingProgress = document.querySelector('.reading-progress-fill');
