@@ -493,9 +493,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
   // ============================================
-  // Toggle Section Visibility (noticia1-4)
+  // Toggle Section Visibility (noticia1-8)
   // ============================================
-  const toggleSections = ['noticia1', 'noticia2', 'noticia3', 'noticia4'];
+  const toggleSections = ['noticia1', 'noticia2', 'noticia3', 'noticia4', 'noticia5', 'noticia6', 'noticia7', 'noticia8'];
   
   toggleSections.forEach(sectionId => {
     const toggleLink = document.querySelector(`a[href="#${sectionId}"]`);
