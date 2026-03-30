@@ -1,8 +1,19 @@
 
+// ============================================
+// Toggle Dropdown
+// ============================================
+function toggleDropdown(id) {
+  console.log('Toggling dropdown for', id);
+  const el = document.getElementById(id);
+  if (el) {
+    el.style.display = el.style.display === 'none' ? 'block' : 'none';
+    console.log('Display set to', el.style.display);
+  } else {
+    console.log('Element with id', id, 'not found');
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
-  // ============================================
-  // First Visit Popup
-  // ============================================
   const popup = document.getElementById('first-popup');
   const popupClose = document.querySelector('.popup-close');
   const popupImage = document.querySelector('.popup-image');
@@ -541,9 +552,33 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // ============================================
-  // Image Modal
-  // ============================================
+  // Generic handler for all smart-card dropdowns
+  function toggleSmartCardDropdown(dropdownId) {
+    const dropdown = document.getElementById(dropdownId);
+    const btn = document.querySelector(`[data-dropdown="${dropdownId}"]`);
+    if (!dropdown) return;
+    const isOpen = dropdown.style.display === 'none' || dropdown.style.display === '';
+    dropdown.style.display = isOpen ? 'block' : 'none';
+    if (btn) {
+      btn.classList.toggle('open', isOpen);
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+  }
+
+  // Wire up all dropdown buttons
+  document.querySelectorAll('[data-dropdown]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      toggleSmartCardDropdown(this.getAttribute('data-dropdown'));
+    });
+  });
+
+  // Wire up all toggle images
+  document.querySelectorAll('img[data-toggle]').forEach(function(img) {
+    img.addEventListener('click', function() {
+      toggleSmartCardDropdown(this.getAttribute('data-toggle'));
+    });
+  });
+
   const galeriaItems = document.querySelectorAll('.galeria-item img');
   
   if (galeriaItems.length > 0) {
