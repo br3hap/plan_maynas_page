@@ -425,6 +425,186 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  // ============================================
+  // Publicaciones search + detail view
+  const publicacionesGrid = document.getElementById('publicacionesGrid');
+  const searchInput = document.getElementById('searchPublicaciones');
+  const categoryButtons = document.querySelectorAll('.filter-publicacion');
+  const resultList = document.getElementById('resultList');
+  const modal = document.getElementById('publicacionModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDate = document.getElementById('modalDate');
+  const modalImage = document.getElementById('modalImage');
+  const modalBody = document.getElementById('modalBody');
+  const modalCategory = document.getElementById('modalCategory');
+  const closeModalBtn = document.querySelector('.close-modal-btn');
+
+  function updateResultCount() {
+    const visibleCards = document.querySelectorAll('.noticias-grid .noticia-card:not(.hidden)');
+    const count = visibleCards.length;
+    const hasActiveFilter = (document.querySelector('.filter-publicacion.active')?.dataset.filter !== 'all') || (searchInput?.value.trim().length > 0);
+
+    if (resultCount) {
+      if (hasActiveFilter) {
+        if (count === 0) {
+          resultCount.textContent = 'No se encontraron publicaciones';
+        } else {
+          resultCount.textContent = `${count} publicación${count === 1 ? '' : 'es'} encontrada${count === 1 ? '' : 's'}`;
+        }
+      } else {
+        resultCount.textContent = '';
+      }
+    }
+
+    if (resultList) {
+      if (hasActiveFilter && count > 0) {
+        resultList.innerHTML = '';
+        visibleCards.forEach(card => {
+          const title = card.dataset.title;
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = '#';
+          a.textContent = title;
+          a.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Simular clic en el botón de la tarjeta
+            const button = card.querySelector('.ver-publicacion');
+            if (button) button.click();
+          });
+          li.appendChild(a);
+          resultList.appendChild(li);
+        });
+        resultList.style.display = 'block';
+      } else {
+        resultList.style.display = 'none';
+      }
+    }
+  }
+
+  function filterPublicaciones() {
+    const searchTerm = searchInput ? searchInput.value.trim().toLowerCase() : '';
+    const activeCategoryButton = document.querySelector('.filter-publicacion.active');
+    const category = activeCategoryButton ? activeCategoryButton.dataset.filter : 'all';
+
+    document.querySelectorAll('.noticias-grid .noticia-card').forEach(card => {
+      const title = card.dataset.title.toLowerCase();
+      const categoryValue = card.dataset.category.toLowerCase();
+      const contentText = card.querySelector('.full-content')?.textContent.toLowerCase() || '';
+      const matchesSearch = !searchTerm || title.includes(searchTerm) || contentText.includes(searchTerm);
+      const matchesCategory = category === 'all' || categoryValue === category;
+
+      if (matchesSearch && matchesCategory) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+
+    // Siempre mostrar el grid
+    if (publicacionesGrid) {
+      publicacionesGrid.style.display = 'grid';
+    }
+
+    updateResultCount();
+    visibleCount = 4; // Reset paginación al filtrar
+    updateVisibleCards(); // Reset paginación después de filtrar
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', filterPublicaciones);
+  }
+
+  categoryButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      categoryButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+      filterPublicaciones();
+    });
+  });
+
+  if (publicacionesGrid) {
+    publicacionesGrid.addEventListener('click', function(e) {
+      const card = e.target.closest('.noticia-card');
+      if (!card) return;
+      const actionButton = e.target.closest('.ver-publicacion');
+      if (!actionButton) return;
+      e.preventDefault();
+
+      const image = card.querySelector('.noticia-imagen img');
+      const title = card.dataset.title;
+      const date = card.querySelector('.noticia-fecha').textContent;
+      const category = card.dataset.category;
+      const content = card.querySelector('.full-content')?.innerHTML || '';
+      const altText = image ? image.alt : title;
+      const imageUrl = image ? image.src : '';
+
+      if (modal) {
+        modalTitle.textContent = title;
+        modalDate.textContent = date;
+        modalCategory.textContent = category.replace('-', ' ');
+        modalImage.src = imageUrl;
+        modalImage.alt = altText;
+        modalBody.innerHTML = content;
+        modal.classList.remove('hidden');
+      }
+    });
+  }
+
+  if (closeModalBtn && modal) {
+    closeModalBtn.addEventListener('click', function() {
+      modal.classList.add('hidden');
+    });
+  }
+
+  // Cerrar modal al hacer clic fuera
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        modal.classList.add('hidden');
+      }
+    });
+
+    // Cerrar con Escape
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        modal.classList.add('hidden');
+      }
+    });
+  }
+
+  filterPublicaciones();
+
+  // ============================================
+  // Ver más publicaciones
+  const verMasBtn = document.getElementById('verMasBtn');
+  let visibleCount = 4; // Inicialmente mostrar 4
+
+  function updateVisibleCards() {
+    const allVisibleCards = document.querySelectorAll('.noticias-grid .noticia-card:not(.hidden)');
+    allVisibleCards.forEach((card, index) => {
+      if (index < visibleCount) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // Ocultar botón si ya se mostraron todas las visibles
+    if (verMasBtn) {
+      verMasBtn.style.display = visibleCount >= allVisibleCards.length ? 'none' : 'block';
+    }
+  }
+
+  if (verMasBtn) {
+    verMasBtn.addEventListener('click', function() {
+      visibleCount += 4; // Mostrar 4 más
+      updateVisibleCards();
+    });
+  }
+
+  // Inicializar mostrando solo las primeras 4
+  updateVisibleCards();
   
   // ============================================
   // Image Slider

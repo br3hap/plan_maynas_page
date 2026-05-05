@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Publicaciones - Plan Maynas</title>
+    <link rel="icon" href="src/docs/img.png" type="image/png">
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="description" content="Publicaciones y noticias de Plan Maynas: Amazonía y ciudad sostenible." />
+    <meta name="author" content="Breithner Aquituari" />
+  </head>
+
+  <body>
+    <div id="root">
+      <div class="reading-progress" role="progressbar" aria-label="Progreso de lectura" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        <div class="reading-progress-fill"></div>
+      </div>
+
+      <button class="theme-toggle" aria-label="Cambiar tema" aria-pressed="false">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+
+      <header class="header">
+        <div class="container">
+          <div class="logo">
+            <a href="index.html#inicio">
+              <img src="src/docs/logo-plan.png" alt="Plan Maynas Logo" style="width: 250px"/>
+            </a>
+          </div>
+          <nav class="nav-menu" style="text-align: center;font-size: small;" aria-label="Navegación principal">
+            <button class="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <ul class="menu" role="list">
+              <li><a href="index.html#inicio">INICIO</a></li>
+              <li><a href="index.html#planes">PLANES TERRITORIALES</a></li>
+              <li><a href="index.html#participaciones">PARTICIPAMOS</a></li>
+              <li><a href="index.html#aliados">NUESTROS ALIADOS</a></li>
+              <li><a href="index.html#recursos">RECURSOS</a></li>
+              <li><a href="publicaciones.html" class="active">NOTICIAS Y ACTUALIZACIONES</a></li>
+              <li><a href="index.html#muestra">MUESTRA VIRTUAL</a></li>
+              <li><a href="index.html#consulta">PDM IQUITOS</a></li>
+              <li><a href="index.html#consulta-pat">PAT MAYNAS</a></li>
+              <li><a href="index.html#contacto">CONTACTO</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      
+      <h1 class="page-title">Noticias y Actualizaciones</h1>
+      
+      <section id="publicaciones" class="section">
+        <div class="container publicaciones-layout">
+          <aside class="publicaciones-sidebar">
+            <h2 class="section-title">Filtrar publicaciones</h2>
+            <div class="form-group">
+              <label for="searchPublicaciones">Buscar publicaciones</label>
+              <input id="searchPublicaciones" type="search" placeholder="Por título, tema o palabra clave" />
+            </div>
+            <div class="filters-block">
+              <h3>Categorías</h3>
+              <ul class="filters-list">
+                <li><button type="button" class="filter-publicacion active" data-filter="all">Todas</button></li>
+                <li><button type="button" class="filter-publicacion" data-filter="consulta">Consulta Pública</button></li>
+                <li><button type="button" class="filter-publicacion" data-filter="audiencias">Audiencias</button></li>
+                <li><button type="button" class="filter-publicacion" data-filter="participacion">Participación</button></li>
+                <li><button type="button" class="filter-publicacion" data-filter="reconocimiento">Reconocimiento</button></li>
+                <li><button type="button" class="filter-publicacion" data-filter="proyectos">Proyectos</button></li>
+              </ul>
+            </div>
+            <div class="filters-block">
+              <h3>Resultados</h3>
+              <p id="resultCount">publicaciones</p>
+              <ul id="resultList" class="result-list"></ul>
+            </div>
+          </aside>
+
+          <div class="publicaciones-main">
+            <div class="noticias-grid" id="publicacionesGrid">
+              <article class="noticia-card" data-id="noticia1" data-category="consulta" data-title="Municipalidad de Maynas cierra etapa de Consulta Pública del PAT Maynas 2045">
+                <div class="noticia-imagen">
+                  <img src="src/docs/img/actualizaciones/img_1.jpg" alt="Diagnóstico PAT Maynas 2045" />
+                </div>
+                <div class="noticia-fecha">23 Marzo 2026</div>
+                <h3>Municipalidad de Maynas cierra etapa de Consulta Pública del PAT Maynas 2045</h3>
+                <button type="button" class="noticia-link ver-publicacion">Ver publicación →</button>
+                <div class="full-content" hidden>
+                  <p>La Municipalidad Provincial de Maynas, a través de la estrategia Plan Maynas | Amazonía y Ciudad Sostenible, cerró la etapa de Consulta Pública del Plan de Acondicionamiento Territorial (PAT Maynas 2045), desarrollada entre el 20 de febrero y el 20 de marzo de 2026, en cumplimiento de los plazos establecidos en la normativa vigente.</p>
+                  <p>Durante este periodo, se promovió la participación de la ciudadanía, autoridades e instituciones en un proceso clave para la planificación del desarrollo de la provincia, integrando las realidades urbanas y rurales. A través de audiencias públicas, plataformas digitales y diversos canales de participación, se recogieron aportes, observaciones y recomendaciones que contribuirán al fortalecimiento del instrumento.</p>
+                  <p>Con el cierre de esta etapa, el proceso ingresa a la fase de evaluación y consolidación, en la que el equipo técnico multidisciplinario analizará los aportes recibidos para su integración, en función de criterios técnicos y normativos, reconociendo el valor de la participación ciudadana en la construcción de una visión de desarrollo para Maynas.</p>
+                  <p>Este proceso ha permitido avanzar hacia una planificación más inclusiva y participativa, en la que la voz de la población y de los actores del territorio contribuye a definir el futuro de la provincia con un enfoque sostenible y acorde a la realidad amazónica.</p>
+                </div>
+              </article>
+
+              <article class="noticia-card" data-id="noticia2" data-category="audiencias" data-title="Plan Maynas realiza Audiencias Públicas del PAT en comunidades de las cuencas del Amazonas, Napo y Nanay">
+                <div class="noticia-imagen">
+                  <img src="src/docs/img/actualizaciones/img_2.jpg" alt="Plan de Participación del PAT Maynas 2045" />
+                </div>
+                <div class="noticia-fecha">09 Marzo 2026</div>
+                <h3>Plan Maynas realiza Audiencias Públicas del PAT en comunidades de las cuencas del Amazonas, Napo y Nanay</h3>
+                <button type="button" class="noticia-link ver-publicacion">Ver publicación →</button>
+                <div class="full-content" hidden>
+                  <p>La estrategia Plan Maynas | Amazonía y Ciudad Sostenible, impulsada por la Municipalidad Provincial de Maynas, desarrolló Audiencias Públicas en distritos ubicados fuera de la zona metropolitana de Iquitos, como parte de la fase final de elaboración del “Plan de Acondicionamiento Territorial (PAT) de la Provincia de Maynas 2025–2045” instrumento de gestión territorial que se enmarca en la Ley de Desarrollo Urbano Sostenible, Ley N° 31313, con el objetivo de, en su etapa de Consulta Pública, recoger aportes de la población y autoridades locales sobre la propuesta que orientará el desarrollo de la provincia en los próximos 20 años.</p>
+                  <p>Las Audiencias descentralizadas se realizaron en los distritos de Mazán, Las Amazonas, Indiana, Napo, Torres Causana, Alto Nanay y Fernando Lores, contando con el apoyo y respaldo de las municipalidades distritales y la participación activa de federaciones representantes de comunidades originarias, autoridades locales y población en general.</p>
+                  <p>Este proceso marca un hito importante en la historia de Maynas, ya que por primera vez se elabora un Plan territorial para la provincia con sus 11 distritos, con una consulta pública que abarca de manera participativa a las zonas urbanas y rurales de Maynas, permitiendo que las comunidades alejadas también puedan aportar directamente en la construcción de los instrumentos de planificación territorial.</p>
+                  <p>Para llegar a estos espacios de diálogo, los equipos técnicos recorrieron largas distancias por vía fluvial a través de los ríos Amazonas, Napo y Nanay, evidenciando los desafíos geográficos que caracterizan a la Amazonía. Estas travesías reflejan además una realidad cotidiana para muchas comunidades, donde las grandes distancias y los elevados costos de traslado dificultan el acceso a diversos servicios y oportunidades.</p>
+                  <p>Los aportes recogidos en estos espacios serán fundamentales para fortalecer el contenido del plan, ya que son los propios pobladores, líderes comunitarios y autoridades de los distritos quienes conocen de primera mano la realidad de sus territorios y las necesidades que deben priorizarse. Su participación permitirá construir un instrumento que refleje las aspiraciones de la población y que oriente el desarrollo equilibrado y sostenible de la provincia de Maynas hacia el año 2045.</p>
+                </div>
+              </article>
+
+              <article class="noticia-card" data-id="noticia3" data-category="participacion" data-title="Plan Maynas convoca a la ciudadanía a participar en la Consulta Pública del PAT 2045">
+                <div class="noticia-imagen">
+                  <img src="src/docs/img/actualizaciones/img_3.jpg" alt="Ciudadanía aporta al futuro de Iquitos en la Sala Abierta del Plan Maynas" />
+                </div>
+                <div class="noticia-fecha">20 Febrero 2026</div>
+                <h3>Plan Maynas convoca a la ciudadanía a participar en la Consulta Pública del PAT 2045</h3>
+                <button type="button" class="noticia-link ver-publicacion">Ver publicación →</button>
+                <div class="full-content" hidden>
+                  <p>La Estrategia Plan Maynas | Amazonía y Ciudad Sostenible, impulsada por la Municipalidad Provincial de Maynas, dio inicio a la Consulta Pública del Plan de Acondicionamiento Territorial (PAT Maynas 2045) este viernes 20 de febrero, un proceso participativo que convoca a la ciudadanía a revisar, opinar y aportar sobre el documento oficial que contiene el diagnóstico y las propuestas para el ordenamiento del territorio provincial.</p>
+                  <p>Esta etapa de consulta estará abierta del 20 de febrero al 20 de marzo, periodo en el que la población podrá presentar sus comentarios y sugerencias a través de puntos físicos y virtuales, fortaleciendo así una planificación construida de manera participativa, con enfoque amazónico y orientada a reducir riesgos, ordenar el crecimiento y mejorar la calidad de vida en Maynas.</p>
+                  <p>Los aportes pueden realizarse mediante la web oficial de Plan Maynas (https://planmaynas.munimaynas.gob.pe/), accediendo a la carpeta digital del documento oficial y al visor digital para comentarios, o a través del código QR, así como de forma presencial en los locales municipales distritales, de lunes a viernes de 8:00 a. m. a 2:00 p. m.</p>
+                  <p>Asimismo, se desarrollarán Audiencias Públicas Descentralizadas el 2 de marzo en los distritos de Las Amazonas (Francisco de Orellana) y Torres Causana (Cabo Pantoja); el 3 de marzo en Mazán; el 4 de marzo en Indiana; el 5 de marzo en Fernando Lores (Tamshiyacu) y Napo (Santa Clotilde); y el 6 de marzo en Alto Nanay (Santa María de Nanay). Además, se realizará la Audiencia Pública Metropolitana el 14 de marzo, dirigida a los distritos de Belén, Punchana y San Juan.</p>
+                  <p>La Consulta Pública del PAT Maynas 2045 es una oportunidad para que la ciudadanía participe activamente en la planificación del futuro de la provincia, aportando desde su experiencia y conocimiento del territorio para construir, de manera conjunta, una Maynas más ordenada, segura y sostenible.</p>
+                </div>
+              </article>
+
+              <article class="noticia-card" data-id="noticia4" data-category="reconocimiento" data-title="Plan Maynas recibe reconocimiento internacional en los Golden Cube Awards 2026">
+                <div class="noticia-imagen">
+                  <img src="src/docs/img/actualizaciones/img_4.jpg" alt="Plan Maynas presenta avances" />
+                </div>
+                <div class="noticia-fecha">13 Febrero 2026</div>
+                <h3>Plan Maynas recibe reconocimiento internacional en los Golden Cube Awards 2026</h3>
+                <button type="button" class="noticia-link ver-publicacion">Ver publicación →</button>
+                <div class="full-content" hidden>
+                  <p>La Estrategia Plan Maynas | Amazonía y Ciudad Sostenible, impulsada por la Municipalidad Provincial de Maynas, recibió un reconocimiento internacional en los Golden Cube Awards 2026, uno de los premios más importantes a nivel mundial en educación sobre arquitectura, urbanismo y entorno construido para la infancia y juventud. El reconocimiento fue otorgado en la categoría Premio Institucional, destacando la experiencia desarrollada en la ciudad de Iquitos como un referente de planificación participativa con enfoque amazónico.</p>
+                  <p>La postulación se realizó a través del proyecto “La ciudad de mis sueños”, una iniciativa que involucró a 180 niñas, niños y adolescentes de zonas inundables y del centro urbano de Iquitos, quienes participaron activamente en talleres, diálogos con autoridades y exposiciones públicas, reflexionando sobre los desafíos y oportunidades de su ciudad. El proyecto otorgó voz a las infancias como actores del futuro urbano, integrando educación, cultura, planificación territorial y sostenibilidad en un proceso innovador liderado desde el gobierno local.</p>
+                  <p>Este reconocimiento posiciona a Iquitos y a la Amazonía peruana en el escenario global, visibilizando una experiencia que demuestra que las ciudades amazónicas pueden liderar propuestas innovadoras frente al cambio climático y la desigualdad urbana. Este logro reafirma el valor de Plan Maynas como una estrategia que apuesta por la educación urbana desde la infancia y fortalece el compromiso de construir una ciudad más justa, resiliente y sostenible.</p>
+                </div>
+              </article>
+
+              <article class="noticia-card" data-id="noticia5" data-category="proyectos" data-title="Reunión de alto nivel definió hoja de ruta para atender zonas inundables y seguridad hídrica de Iquitos">
+                <div class="noticia-imagen">
+                  <img src="src/docs/img/actualizaciones/img_6.jpg" alt="Nueva noticia 5" />
+                </div>
+                <div class="noticia-fecha">07 Febrero 2026</div>
+                <h3>Reunión de alto nivel definió hoja de ruta para atender zonas inundables y seguridad hídrica de Iquitos</h3>
+                <button type="button" class="noticia-link ver-publicacion">Ver publicación →</button>
+                <div class="full-content" hidden>
+                  <p>Con la participación de autoridades del Gobierno Nacional, el Gobierno Regional de Loreto y los gobiernos locales, se desarrolló ayer viernes 06 de febrero la Reunión de Alto Nivel de Articulación Intersectorial para la atención urgente del riesgo urbano y ambiental en zonas inundables y la seguridad hídrica de la ciudad de Iquitos, organizada por la Municipalidad Provincial de Maynas a través del Proyecto Plan Maynas, en el Instituto de Investigaciones de la Amazonía Peruana (IIAP).</p>
+                  <p>Durante la jornada se presentaron los avances del Plan Maynas | Amazonía y Ciudad Sostenible, incluyendo el Plan de Acondicionamiento Territorial (PAT) de la provincia de Maynas y el Plan de Desarrollo Metropolitano (PDM) de Iquitos 2025–2045, ambos instrumentos fundamentales para orientar el desarrollo urbano y territorial de la ciudad y su área de influencia bajo un enfoque sostenible, preventivo y adaptado a la realidad amazónica.</p>
+                  <p>La reunión permitió generar un espacio de diálogo técnico y político para recoger aportes y recomendaciones de los distintos sectores y niveles de gobierno, orientados a fortalecer los componentes de gestión del riesgo, saneamiento, vivienda segura, movilidad, espacios públicos y protección de fuentes hídricas. A través de mesas de trabajo, los participantes formularon propuestas concretas que contribuirán a la construcción de una Hoja de Ruta interinstitucional para la atención integral de las zonas inundables.</p>
+                  <p>El encuentro reafirmó la necesidad de una respuesta articulada entre todos los niveles de gobierno, con enfoque amazónico e intercultural, frente a los desafíos que impone el cambio climático y la dinámica fluvial de Iquitos. Como resultado, se consolidó el compromiso de avanzar de manera conjunta en la implementación progresiva de soluciones sostenibles que garanticen la seguridad hídrica y el bienestar de la población.</p>
+                </div>
+              </article>
+<!-- 
+              <article class="noticia-card" data-id="noticia6" data-category="proyectos" data-title="Colaboración con universidades para el desarrollo urbano">
+                <div class="noticia-imagen">
+                  <img src="src/docs/img/actualizaciones/img_6.jpg" alt="Nueva noticia 6" />
+                </div>
+                <div class="noticia-fecha">30 Enero 2026</div>
+                <h3>Colaboración con universidades para el desarrollo urbano</h3>
+                <button type="button" class="noticia-link ver-publicacion">Ver publicación →</button>
+                <div class="full-content" hidden>
+                  <p>Plan Maynas establece alianzas estratégicas con universidades locales y nacionales para fomentar la investigación en desarrollo urbano sostenible. Estas colaboraciones buscan integrar conocimientos académicos con la planificación territorial, desarrollando soluciones innovadoras adaptadas a los desafíos únicos de la Amazonía, como la inundación y la biodiversidad. Los proyectos conjuntos incluyen estudios sobre resiliencia urbana y diseño de infraestructuras verdes.</p>
+                </div>
+              </article>
+
+              <article class="noticia-card" data-id="noticia7" data-category="proyectos" data-title="Avances en el Plan de Desarrollo Metropolitano de Iquitos">
+                <div class="noticia-imagen">
+                  <img src="src/docs/img/actualizaciones/img_7.JPG" alt="Nueva noticia 7" />
+                </div>
+                <div class="noticia-fecha">15 Enero 2026</div>
+                <h3>Avances en el Plan de Desarrollo Metropolitano de Iquitos</h3>
+                <button type="button" class="noticia-link ver-publicacion">Ver publicación →</button>
+                <div class="full-content" hidden>
+                  <p>Se presentan los últimos avances en el PDM Iquitos, con un enfoque en la inclusión de voces comunitarias y la planificación sostenible. El plan ha incorporado aportes de más de 500 ciudadanos a través de talleres participativos, resultando en propuestas para mejorar la movilidad urbana, el acceso a servicios básicos y la protección contra inundaciones. Estos avances refuerzan el compromiso de construir una metrópolis amazónica inclusiva y resiliente.</p>
+                </div>
+              </article>
+
+              <article class="noticia-card" data-id="noticia8" data-category="proyectos" data-title="Plan Maynas celebra el inicio del año con nuevos proyectos">
+                <div class="noticia-imagen">
+                  <img src="src/docs/img/actualizaciones/img_8.jpg" alt="Nueva noticia 8" />
+                </div>
+                <div class="noticia-fecha">01 Enero 2026</div>
+                <h3>Plan Maynas celebra el inicio del año con nuevos proyectos</h3>
+                <button type="button" class="noticia-link ver-publicacion">Ver publicación →</button>
+                <div class="full-content" hidden>
+                  <p>Con el comienzo de 2026, Plan Maynas anuncia una serie de proyectos innovadores para el desarrollo integral de Maynas. Entre ellos, se incluyen la construcción de parques urbanos, la implementación de sistemas de transporte ecológico y la expansión de programas de vivienda sostenible. Estos proyectos buscan mejorar la calidad de vida de los habitantes, promoviendo un crecimiento equilibrado que armonice con el entorno amazónico.</p>
+                </div>
+              </article> -->
+
+            <article class="noticia-card" data-id="noticia9" data-category="proyectos" data-title="Diagnóstico del Plan de Acondicionamiento Territorial (PAT) Maynas 2045">
+                <div class="noticia-imagen">
+                  <img src="src/docs/img/actualizaciones/img_10.jpg" alt="Nueva noticia 9" />
+                </div>
+                <div class="noticia-fecha">11 Agosto 2025</div>
+                <h3>Diagnóstico del Plan de Acondicionamiento Territorial (PAT) Maynas 2045</h3>
+                <button type="button" class="noticia-link ver-publicacion">Ver publicación →</button>
+                <div class="full-content" hidden>
+                  <p>Un paso clave hacia la planificación territorial sostenible<br/>
+
+                        La Municipalidad Provincial de Maynas, en convenio con el Gobierno Regional de Loreto, presenta oficialmente el Diagnóstico del Plan de Acondicionamiento Territorial (PAT) de Maynas , un documento técnico fundamental para orientar el ordenamiento y crecimiento del territorio provincial hacia el año 2045.<br/><br/>
+
+                        Este diagnóstico constituye la base analítica del PAT , integrando información geográfica, ambiental, social, económica y urbana sobre los once distritos de la provincia. Es la primera vez que se construye un plan a escala provincial en el contexto amazónico, con una mirada que abarca tanto el área urbana como la rural, asegurando una visión integral y con sentido territorial.<br/><br/>
+
+                        Entre los principales componentes abordados en este documento se incluyen:<br/><br/>
+
+                        La estructura física y ecológica del territorio.<br/>
+                        El análisis de riesgos naturales y antrópicos.<br/>
+
+                        Las dinámicas poblacionales y económicas.<br/>
+
+                        La movilidad y accesibilidad entre zonas urbanas y rurales.<br/>
+                        El sistema de centros poblados, servicios e infraestructura.<br/>
+
+                        El uso del suelo, la cobertura vegetal y las actividades productivas.<br/>
+
+                        Las presiones sobre el ambiente, como deforestación y minería ilegal.<br/><br/>
+
+                        Este proceso de diagnóstico se ha elaborado bajo una metodología participativa, multiescalar y técnica , incorporando insumos de trabajo de campo, reuniones con autoridades locales, entrevistas, mesas técnicas, Salas Abiertas Ciudadanas y el acompañamiento de instituciones aliadas.<br/><br/>
+
+                        El PAT Maynas es un instrumento de planificación que permitirá organizar y regular el territorio en función de sus características, necesidades y proyecciones, asegurando el equilibrio entre el desarrollo urbano, rural y la conservación de los ecosistemas amazónicos.<br/><br/>
+
+                        El proyecto Plan Maynas | Amazonía y Ciudad Sostenible es desarrollado por la Municipalidad Provincial de Maynas, con el financiamiento del Gobierno Regional de Loreto, el acompañamiento técnico del Instituto Metropolitano de Planificación (IMP) y la asistencia técnica del Ministerio de Vivienda, Construcción y Saneamiento (MVCS).
+                     </p>
+                </div>
+              </article>
+
+            <article class="noticia-card" data-id="noticia10" data-category="proyectos" data-title="Plan de Participación del PAT Maynas 2045">
+                <div class="noticia-imagen">
+                  <img src="src/docs/img/actualizaciones/img_13.jpg" alt="Nueva noticia 10" />
+                </div>
+                <div class="noticia-fecha">04 Agosto 2025</div>
+                <h3>Plan de Participación del PAT Maynas 2045</h3>
+                <button type="button" class="noticia-link ver-publicacion">Ver publicación →</button>
+                <div class="full-content" hidden>
+                  <p>Plan de Participación del PAT Maynas 2045<br/><br/>
+
+                    En el marco de la formulación del Plan de Acondicionamiento Territorial (PAT) de Maynas al 2045) , la Municipalidad Provincial de Maynas , en convenio con el Gobierno Regional de Loreto , pone a disposición pública el Plan de Participación Ciudadana , aprobado por unanimidad en la CCLP.<br/>
+
+                    Este documento define los lineamientos, mecanismos y espacios que garantizan una participación activa, inclusiva y representativa de la ciudadanía y actores del territorio en todas las etapas del proceso.<br/>
+
+                    La planificación territorial es una tarea colectiva que requiere del diálogo, el consenso y el compromiso de todos para construir un territorio ordenado, sostenible y con visión de futuro.</p>
+                </div>
+              </article>
+
+                <article class="noticia-card" data-id="noticia11" data-category="proyectos" data-title="Ciudadanía aporta al futuro de Iquitos en la Sala Abierta del Plan Maynas">
+                <div class="noticia-imagen">
+                  <img src="src/docs/img/actualizaciones/img_14.jpg" alt="Nueva noticia 11" />
+                </div>
+                <div class="noticia-fecha">03 Junio 2025</div>
+                <h3>Ciudadanía aporta al futuro de Iquitos en la Sala Abierta del Plan Maynas</h3>
+                <button type="button" class="noticia-link ver-publicacion">Ver publicación →</button>
+                <div class="full-content" hidden>
+                  <p>
+                    Iquitos, 31 de mayo de 2025.- Reafirmando su compromiso con una planificación participativa, transparente y con enfoque territorial, la Municipalidad Provincial de Maynas, a través de la Gerencia de Acondicionamiento Territorial y en el marco del Plan Maynas, llevó a cabo la primera Sala Abierta Ciudadana del Plan de Desarrollo Metropolitano de Iquitos al 2045 (PDM Iquitos). Se trata de un instrumento fundamental para guiar el desarrollo urbano y rural sostenible de la ciudad en las próximas dos décadas y, actualmente, se encuentra proceso de elaboración en alianza con el Instituto Metropolitano de Planificación (IMP).<br/><br/>
+
+                    La Sala Abierta es un espacio de diálogo y construcción colectiva que forma parte de los mecanismos permanentes de participación promovidos por Plan Maynas. Su propósito es asegurar que la planificación territorial de la provincia se construya de manera inclusiva, integrando los aportes, saberes y perspectivas de los distintos actores del territorio. En esta edición, se recogieron valiosos insumos para enriquecer el diagnóstico técnico del PDM Iquitos 2045, incorporando las vivencias, preocupaciones y propuestas de quienes habitan y proyectan el futuro de la ciudad.<br/><br/>
+
+                    La jornada reunió a representantes de organizaciones sociales, instituciones públicas,  gremios, colegios profesionales, colectivos ciudadanos y vecinos de distintos sectores de la ciudad, en un ejercicio de diálogo horizontal y colaboración técnica.<br/><br/>
+
+                    El evento fue inaugurado por la Abog. Paola Bances Chávez, primera regidora de la Municipalidad Provincial de Maynas, quien destacó la importancia de que la ciudadanía sea parte activa de los procesos de planificación, reconociendo que el desarrollo de Iquitos debe construirse desde el territorio y con la participación de sus habitantes. A continuación, la Abog. Carmen del Rocío Catunta Alva, gerente de Acondicionamiento Territorial de la Municipalidad Provincial de Maynas, presentó los avances del proceso de formulación del PDM Iquitos 2045, remarcando que este instrumento no solo orientará el crecimiento físico de la ciudad, sino también su transformación social, económica y ambiental, con una visión de largo plazo y sostenibilidad.<br/><br/>
+
+                    Seguidamente, el Arq. Julio Guerra Carrillo, director del Instituto Metropolitano de Planificación (IMP), expuso aspectos clave del diagnóstico territorial, abordando temas como la expansión urbana, las amenazas ambientales, las brechas en infraestructura y servicios, y los desafíos para la movilidad, la vivienda y la economía urbana. Su presentación ofreció un panorama claro y fundamentado sobre la situación actual de Iquitos y los retos que enfrenta para proyectar su desarrollo hacia el 2045.<br/><br/>
+
+                    Luego de la exposición técnica, se dio paso a una dinámica participativa donde los asistentes se organizaron en grupos de trabajo temáticos. Acompañados por especialistas del equipo técnico, los grupos analizaron y compartieron aportes sobre los seis componentes que estructuran el diagnóstico del PDM Iquitos 2045: medio ambiente y riesgos; suelo; espacios públicos, equipamiento y servicios urbanos; urbanización y vivienda; viabilidad y movilidad urbana sostenible; y economía urbana y proyectos estratégicos.<br/><br/>
+
+                    Las reflexiones generadas en cada grupo fueron presentadas por representantes técnicos, quienes resumieron los principales aportes ciudadanos. Estos insumos serán sistematizados e incorporados en el proceso técnico del plan, reforzando su legitimidad, pertinencia y anclaje en la realidad del territorio.<br/><br/>
+
+                    El evento concluyó con las palabras de las representantes de la Municipalidad Provincial de Maynas, la gerente de Acondicionamiento Territorial, Abog. Carmen del Rocío Catunta Alva y la primera regidora, Abog. Paola Bances Chávez; quienes coincidieron en el valor de estos espacios abiertos de intercambio como base para una planificación territorial moderna, inclusiva y con visión de futuro. Finalmente, la primera regidora destacó  la necesidad de fortalecer la articulación entre el conocimiento técnico, la voluntad política y la participación activa de la ciudadanía para lograr una ciudad más equitativa, resiliente y sostenible.<br/><br/>
+
+                    Con esta jornada, Plan Maynas reafirma su enfoque de gobernanza territorial compartida, donde la planificación no es un proceso técnico aislado, sino una herramienta al servicio del desarrollo humano, construida desde el diálogo, la evidencia y el compromiso colectivo.
+                  </p>
+                </div>
+              </article>
+
+
+            <article class="noticia-card" data-id="noticia12" data-category="proyectos" data-title="Plan Maynas marca el rumbo: Municipalidad Provincial de Maynas presentó avances clave del diagnóstico técnico del Plan de Desarrollo Metropolitano de Iquitos">
+                    <div class="noticia-imagen">
+                    <img src="src/docs/img/actualizaciones/img_5.jpeg" alt="Nueva noticia 12" />
+                    </div>
+                    <div class="noticia-fecha">21 Mayo 2025</div>
+                    <h3>Plan Maynas marca el rumbo: Municipalidad Provincial de Maynas presentó avances clave del diagnóstico técnico del Plan de Desarrollo Metropolitano de Iquitos</h3>
+                    <button type="button" class="noticia-link ver-publicacion">Ver publicación →</button>
+                    <div class="full-content" hidden>
+                    <p>
+                        Como parte de su compromiso con una planificación urbana sostenible e inclusiva, la Municipalidad Provincial de Maynas (MPM), a través de su Gerencia de Acondicionamiento Territorial y en alianza con el Instituto Metropolitano de Planificación (IMP), llevó a cabo el pasado viernes 16 de mayo la segunda Mesa de Trabajo Nuclear Local, en la que se presentaron los avances técnicos del diagnóstico del Plan de Desarrollo Metropolitano de Iquitos al 2045 (PDM Iquitos).<br/><br/>
+
+                        El PDM Iquitos es uno de los tres instrumentos de gestión territorial que comprende el Plan Maynas, una estrategia integral impulsada por la MPM, en convenio con el Gobierno Regional de Loreto (GOREL), y que busca guiar el desarrollo rural y urbano del territorio de manera planificada, participativa y sostenible. Junto con el Plan de Acondicionamiento Territorial de Maynas (PAT Maynas)  y el Plan Maestro del Centro Histórico de Iquitos (PMZUM Iquitos), el PDM constituye una hoja de ruta clave para el futuro de nuestra ciudad.<br/><br/>
+
+                        Esta nueva mesa de trabajo es uno de los cinco espacios participativos contemplados en el proceso de formulación del plan y tiene como objetivo recoger aportes técnicos, dialogar con los actores locales y validar colectivamente los principales hallazgos del diagnóstico.<br/><br/>
+
+                        La jornada se realizó en el auditorio de la Municipalidad de Maynas e inició con las palabras del alcalde provincial, Econ. Germán Vladimir Chong Ríos, quien destacó la importancia de planificar el crecimiento de Iquitos con visión de futuro. Lo acompañaron la Abog. Carmen del Rocío Catunta, gerente de Acondicionamiento Territorial de la MPM y el Ing. Daniel Romero, director de la Oficina de Información Técnica del IMP.<br/><br/>
+
+                        La exposición de los avances técnicos estuvo a cargo del equipo del PDM Iquitos, liderado por el Arq. Gustavo Puma, quien presentó los resultados preliminares del diagnóstico en áreas clave para el desarrollo urbano sostenible, como gestión de riesgo y desastres medioambientales, gestión del suelo y estructura urbana, espacios públicos y equipamientos urbanos, gestión de la vivienda, y vialidad y movilidad urbana sostenible.<br/><br/>
+
+                        Durante la presentación se resaltó el trabajo de campo realizado en diversos sectores de la ciudad, que permitió identificar desafíos y oportunidades desde una mirada territorial adaptada al contexto amazónico.<br/><br/>
+
+                        La mesa de trabajo contó con la participación activa de autoridades y funcionarios de la MPM, entre ellos: Jesús Celeste Montes Pizango, regidora provincial; Ricardo Fonseca, gerente de Administración; Edgar Jiménez, gerente de Obras; Moisés Trigoso, gerente de Desarrollo Social; Juan Carlos García, gerente de Rentas; Kattia Lucero Layche, gerenta de Saneamiento, Salubridad y Salud Ambiental; Marco Antonio Reátegui, gerente de Seguridad Ciudadana y Gestión de Riesgo de Desastres.<br/><br/>
+
+                        También asistieron representantes de las municipalidades distritales de Alto Nanay, Las Amazonas, Indiana, Punchana y Belén, quienes compartieron sus aportes y coincidieron en la importancia de seguir fortaleciendo estos espacios de diálogo técnico.<br/><br/>
+
+                        Se sumaron, además, instituciones como la Dirección Desconcentrada de Cultura de Loreto, Senamhi, el Instituto de Investigaciones de la Amazonía Peruana (IIAP), Acuerdo por Iquitos, el Colegio de Arquitectos del Perú (CAP) y la Cámara de Comercio de Loreto. Su presidente, Jorge Morales, subrayó la necesidad de trabajar de manera articulada para enfrentar desafíos como el transporte urbano, la contaminación y la ocupación desordenada del territorio.<br/><br/>
+
+                        Al cierre de la jornada, la Abog. Carmen del Rocío Catunta, en representación de la MPM, reafirmó el compromiso institucional de construir, validar y socializar el PDM Iquitos de forma participativa, e invitó a las instituciones presentes a continuar colaborando activamente en el proceso en aras de consolidar una visión compartida de ciudad y orientar el desarrollo de Iquitos con sostenibilidad, equidad y enfoque territorial.<br/><br/>
+                    </p>
+                    </div>
+                </article>
+
+
+            <article class="noticia-card" data-id="noticia13" data-category="proyectos" data-title="Hacia un Iquitos más sostenible: Plan Maynas presenta al equipo que liderara el futuro urbano de la ciudad">
+                    <div class="noticia-imagen">
+                    <img src="src/docs/img/actualizaciones/img_7.JPG" alt="Nueva noticia 13" />
+                    </div>
+                    <div class="noticia-fecha">2 Abril 2025</div>
+                    <h3>Hacia un Iquitos más sostenible: Plan Maynas presenta al equipo que liderara el futuro urbano de la ciudad</h3>
+                    <button type="button" class="noticia-link ver-publicacion">Ver publicación →</button>
+                    <div class="full-content" hidden>
+                    <p>
+                        La Municipalidad Provincial de Maynas (MPM), a través de la Gerencia de Acondicionamiento Territorial, llevó a cabo con éxito la presentación oficial del equipo técnico del Plan de Desarrollo Metropolitano de Iquitos (PDM Iquitos) al 2045, que se realiza en convenio con el Instituto Metropolitano de Planificación (IMP). <br/><br/>
+
+                        El PDM es uno de los tres instrumentos de gestión territorial que conforman el Plan Maynas | Amazonía y ciudad sostenible, una estrategia integral e intergubernamental que busca transformar la gestión del territorio con un enfoque sostenible y participativo. El proyecto es impulsado por la Municipalidad Provincial de Maynas, bajo el liderazgo del alcalde, econ. Vladimir Chong, en convenio con el Gobierno Regional de Loreto.<br/><br/>
+
+                        Este evento, realizado en el Colegio de Ingenieros de Loreto, marcó un hito en la planificación territorial de la ciudad, consolidando el compromiso de diversos actores clave en la construcción de un futuro sostenible para Iquitos. <br/><br/>
+
+                        Contó con la participación de representantes de diversas instituciones, incluyendo la Dirección Regional de Vivienda, Construcción y Saneamiento del Gobierno Regional de Loreto, los gerentes de desarrollo urbano de las municipalidades distritales de Alto Nanay, Belén, Indiana, Las Amazonas, Punchana y San Juan Bautista, así como diversas gerencias de la Municipalidad Provincial de Maynas.<br/><br/>
+
+                        También asistieron entidades como la Marina de Guerra del Perú, la Fuerza Aérea del Perú, el Senamhi, el Ministerio de Vivienda y la Dirección Desconcentrada de Cultura, además de representantes del Consejo Regional de Decanos, el Colegio de Arquitectos, el Colegio de Ingenieros de Loreto y del Acuerdo por Iquitos.<br/><br/>
+
+                        La planificación como herramienta para el futuro de Iquitos<br/><br/>
+
+                        Durante la jornada, se presentaron los avances del Plan Maynas y se oficializó el equipo técnico que liderará la formulación del Plan de Desarrollo Metropolitano de Iquitos al 2045 (PDM Iquitos). Este equipo tendrá la responsabilidad de desarrollar un diagnóstico integral del territorio y definir estrategias que permitan un crecimiento ordenado y sostenible de la ciudad.<br/><br/>
+
+                        En su intervención, la primera regidora, Paola Bance, en representación del alcalde de la Municipalidad Provincial de Maynas, econ. Vladimir Chong, resaltó la importancia de que el PDM Iquitos responda a las particularidades de la ciudad y su gente, enfatizando la necesidad de construir un modelo de desarrollo que valore la identidad amazónica y las dinámicas locales.Por su parte, Rocío Catunta, gerente de Acondicionamiento Territorial, destacó el PDM Iquitos como una hoja de ruta esencial para el desarrollo de la ciudad. Asimismo, la arq. Mayra Vila, coordinadora del Plan Maynas, subrayó la necesidad de planificar un futuro urbano integrado con la Amazonía.<br/><br/>
+
+                        Uno de los momentos clave del evento fue la presentación del equipo técnico multidisciplinario del PDM Iquitos 2045, a cargo del arq. Julio César Guerra, director de la Oficina General del Sistema Metropolitano de Planificación del Instituto Metropolitano de Planificación. Dicho equipo fue seleccionado tras un riguroso proceso de selección, que inició con una convocatoria abierta que recibió 97 postulaciones de profesionales de más de 10 regiones del país y de 7 especialidades distintas, reflejando la diversidad y la riqueza de enfoques necesarios para transformar el territorio. <br/><br/>
+
+                        El rol de los ríos en la planificación urbana<br/><br/>
+
+                        Un tema central de la jornada fue la importancia de los ríos amazónicos en la planificación de Iquitos, destacando su rol estratégico como vías de comunicación y recursos clave para el desarrollo territorial. En ese contexto, la Dirección de Hidrografía Nacional del Servicio de Hidrografía y Navegación de la Amazonía, representada por el CdF. Luis Gutiérrez, expuso sobre la dinámica fluvial de los Ríos Nanay, Itaya y Amazonas, aportando criterios técnicos fundamentales para la planificación del crecimiento urbano de la ciudad.<br/><br/>
+
+                        Un espacio de diálogo y articulación<br/><br/>
+
+                        El evento culminó con un conversatorio entre las Gerencias de Desarrollo Urbano de la metrópoli iquiteña, donde representantes de distintas municipalidades distritales expusieron la problemática y el estado situacional de sus territorios. Este espacio, moderado por el arq. Gustavo Puma, coordinador del PDM Iquitos, permitió identificar desafíos comunes y plantear estrategias conjuntas para abordar el desarrollo urbano y rural de Iquitos. 
+
+                        Compromiso con el futuro de Iquitos
+
+                        Con la presentación del equipo del PDM Iquitos al 2045, se da inicio a un proceso técnico y participativo que busca transformar la ciudad bajo un modelo de planificación sostenible. La Municipalidad Provincial de Maynas reafirma su compromiso de seguir impulsando la planificación territorial como un pilar clave para el bienestar de la ciudadanía y el equilibrio con el entorno amazónico.
+                    </p>
+                    </div>
+                </article>
+
+                <article class="noticia-card" data-id="noticia14" data-category="proyectos" data-title="Iquitos mira hacia el futuro con su Plan de Desarrollo Metropolitano">
+                    <div class="noticia-imagen">
+                    <img src="src/docs/img/actualizaciones/img_8.jpg" alt="Nueva noticia 13" />
+                    </div>
+                    <div class="noticia-fecha">2 Abril 2025</div>
+                    <h3>Iquitos mira hacia el futuro con su Plan de Desarrollo Metropolitano</h3>
+                    <button type="button" class="noticia-link ver-publicacion">Ver publicación →</button>
+                    <div class="full-content" hidden>
+                    <p>
+                        La Municipalidad Provincial de Maynas (MPM), a través de la Gerencia de Acondicionamiento Territorial y en convenio con el Instituto Metropolitano de Planificación (IMP), ha iniciado el proceso de elaboración del Plan de Desarrollo Metropolitano de Iquitos al 2045 (PDM Iquitos), un instrumento de gestión clave para la planificación territorial y el desarrollo sostenible de la ciudad.<br/><br/>
+
+                        El PDM Iquitos es parte del Plan Maynas, una estrategia integral de la MPM en convenio con el Gobierno Regional de Loreto (GOREL), y busca proyectar el crecimiento urbano de la ciudad en los próximos años, incorporando criterios de sostenibilidad, resiliencia y mejora en la calidad de vida de la población. <br/><br/>
+
+                        Como parte de este proceso, se conformó este jueves, en el Colegio de Arquitectos de Loreto, la primera Mesa de trabajo nuclear local, uno de los cinco espacios establecidos en la estrategia de gobernanza transversal del Plan Maynas. En esta oportunidad, los principales temas abordados fueron la delimitación del área que reglamentará el PDM, el manejo de datos actualizados y la importancia del cambio climático en la planificación.<br/><br/>
+
+                        Dicha mesa es un lugar de participación activa y concertación de los actores locales de los tres niveles de gobierno, que residen y conocen la ciudad de Iquitos y el territorio de Maynas. Permitirá una articulación efectiva entre las municipalidades, el Gobierno Regional y otras instituciones, asegurando que las decisiones tomadas reflejen las necesidades reales del territorio y fomenten un desarrollo equitativo y sostenible.<br/><br/>
+
+                        Así, el evento organizado por la Municipalidad Provincial de Maynas reunió a los gerentes de Desarrollo urbano de los distritos de la zona metropolitana de Iquitos (San Juan, Belén y Punchana) y de otros distritos que conforman la provincia, al Gobierno Regional de Loreto y a un amplio grupo de representantes de diversas entidades regionales. Destacó la presencia de la Sra. Paola Bances, primera regidora de la MPM; la Sra. Rocío Catunta, gerenta de Acondicionamiento territorial de la MPM, junto a sus pares, los señores Moisés Trigoso y Ervin Quiroz, gerentes de Desarrollo social y Tránsito y transporte público, respectivamente; la directora regional de Vivienda, Construcción y Saneamiento, la Sra. Vanessa Arévalo; y la Gerencia Regional de Transporte y Comunicaciones.<br/><br/> 
+
+                        También participaron el Sr. Isaac Núñez, director de la Dirección Desconcentrada de Cultura; el Sr. Marco Paredes, director regional de Senamhi; representantes del Servicio Nacional de Hidrografía y Navegación de la Amazonía, así como investigadoras de Flacso-Ecuador y el Acuerdo por Iquitos, reafirmando el compromiso con una planificación participativa e inclusiva.<br/><br/>
+
+                        Por su parte, los representantes de San Juan Bautista, Belén y Punchana, municipalidades que se encuentran comprendidas en los alcances del plan, expusieron sus miradas técnicas y coincidieron en la importancia de este proceso para fortalecer la planificación de sus distritos, mejorar la infraestructura y garantizar mejores condiciones de vida para la población. Además, se resaltó que un PDM actualizado permitirá gestionar de manera más eficiente las áreas urbanas y ribereñas, promoviendo un crecimiento ordenado, inclusivo y sostenible para toda la ciudad.<br/><br/>
+
+                        La actualización del PDM de Iquitos representa un hito en la gestión territorial de la ciudad y refuerza el compromiso de las autoridades locales y regionales con un desarrollo urbano que responda a las necesidades de la población y al cuidado del entorno amazónico.
+                    </p>
+                    </div>
+                </article>
+
+            <article class="noticia-card" data-id="noticia15" data-category="proyectos" data-title="Plan Maynas avanza: Consolidación del pacto territorial y convocatoria de equipo técnico marcan el inicio del proceso de planificacion">
+                    <div class="noticia-imagen">
+                    <img src="src/docs/img/actualizaciones/img_9.jpeg" alt="Nueva noticia 15" />
+                    </div>
+                    <div class="noticia-fecha">2 Abril 2025</div>
+                    <h3>Plan Maynas avanza: Consolidación del pacto territorial y convocatoria de equipo técnico marcan el inicio del proceso de planificacion</h3>
+                    <button type="button" class="noticia-link ver-publicacion">Ver publicación →</button>
+                    <div class="full-content" hidden>
+                    <p>
+                        Plan Maynas, impulsado por la Municipalidad Provincial de Maynas, a través de la Gerencia de Acondicionamiento Territorial y en convenio con el Gobierno Regional de Loreto, es una estrategia integral y participativa que apuesta por un territorio en equilibrio. Este equilibrio significa una ciudad que crece sin dar la espalda a la Amazonía, comunidades que acceden a infraestructura sin perder su identidad, un desarrollo urbano y rural que garantice sostenibilidad, y la protección del patrimonio histórico en armonía con la modernización. <br/><br/>
+
+                        Para lograrlo, Plan Maynas se articula en tres grandes instrumentos de gestión al 2045: el Plan de Acondicionamiento Territorial de Maynas (PAT Maynas), el Plan de Desarrollo Metropolitano de Iquitos (PDM Iquitos) y el Plan Maestro de la Zona Urbano Monumental de Iquitos (PMZUM Iquitos), que en conjunto ordenarán el territorio, fortalecerán capacidades y dotarán de herramientas a la gestión urbana y rural.<br/><br/>
+
+                        Así, el 10 de febrero tuvo lugar un hito clave en este proceso con el lanzamiento oficial del Plan Maynas y la firma del Pacto por el Desarrollo territorial sostenible de la provincia de Maynas y la  ciudad de Iquitos. En este compromiso, participaron alcaldes y representantes de los 11 distritos de la provincia, consolidando un acuerdo interinstitucional para alinear esfuerzos en la planificación y gestión del territorio.<br/><br/>
+
+                        Además, como parte del convenio con el Instituto Metropolitano de Planificación de Lima, se inició la convocatoria para conformar el equipo técnico que liderará la elaboración del PDM Iquitos al 2045. La convocatoria tuvo una respuesta destacada: 97 postulantes de más de 7 regiones del país y 10 especialidades distintas mostraron interés en formar parte de este proceso. En las próximas semanas, se completará la selección del equipo, asegurando un grupo multidisciplinario que aportará con su experiencia en planificación territorial, gestión de riesgos, sostenibilidad e inversiones.<br/><br/>
+
+                        En paralelo, Plan Maynas ha avanzado en la consolidación de diversos actores como el Colegio de Arquitectos del Perú (CAP Loreto), Colegio de Economistas de Loreto (CELOR) y el Consejo Regional de Decanos de los Colegios Profesionales (CONREDE), a fin de incorporar a todos los colegios profesionales y promover una visión técnica y multidisciplinaria en el desarrollo de los planes. Asimismo, se está gestionando la asistencia técnica del Ministerio de Vivienda, Construcción y Saneamiento (MVCS) y vienen sumándose, a nivel de gestión, el Plan Binacional de Desarrollo de la Región Fronteriza Perú Ecuador (PBPE), la Comisión Nacional de Investigación y Desarrollo Aeroespacial (CONIDA), el Servicio de Hidrografía y Navegación de la Amazonía de la Marina de Guerra del Perú (SHNA - MGP), el Centro Nacional de Estimación, Prevención y Reducción del Riesgo de Desastres (CENEPRED) y la Fundación Internacional para el Desarrollo de Gobiernos Confiables (FIDEGOC).<br/>
+
+                        Con estos primeros avances del Plan Maynas, se marca el inicio de una transformación hacia un desarrollo sostenible, desde un trabajo colectivo. Recordemos que la planificación no es solo un ejercicio técnico, sino un proceso participativo donde la ciudadanía, organizaciones sociales, las autoridades, el sector privado y la academia desempeñan un rol fundamental. La construcción de un territorio en equilibrio sólo será posible con la colaboración de todos, asegurando que cada decisión tomada se traduzca en bienestar, garantizando un futuro armónico y resiliente para las generaciones presentes y futuras.
+                    </p>
+                    </div>
+                </article>
+
+                <article class="noticia-card" data-id="noticia16" data-category="proyectos" data-title="¿Qué hemos venido haciendo como parte de los actos preparatorios y gestiones previas?">
+                    <div class="noticia-imagen">
+                    <img src="src/docs/img/actualizaciones/img_11.jpg" alt="Nueva noticia 16" />
+                    </div>
+                    <div class="noticia-fecha">17 Marzo 2025</div>
+                    <h3>¿Qué hemos venido haciendo como parte de los actos preparatorios y gestiones previas?</h3>
+                    <button type="button" class="noticia-link ver-publicacion">Ver publicación →</button>
+                    <div class="full-content" hidden>
+                    <p>
+                        Desde noviembre de 2024 hasta enero de 2025, hemos llevado a cabo diversas reuniones con actores clave de la región. Con el objetivo de lograr un verdadero desarrollo territorial sostenible, hemos trabajado de manera colaborativa con instituciones, organizaciones y la ciudadanía, integrando sus perspectivas y conocimientos en cada etapa del proceso.<br/><br/>
+
+                        Apostamos por un modelo de gestión participativa, en la que la cooperación interinstitucional y la intervención activa de todos los sectores son esenciales para garantizar un desarrollo ordenado, inclusivo y respetuoso con la identidad de nuestro territorio. A continuación, compartimos la lista de principales encuentros y los actores que participaron:<br/><br/>
+
+                        Talleres de actos preparatorios para la definición de las principales problemáticas y oportunidades que deben abordarse en el desarrollo de los planes territoriales<br/><br/>  
+
+                        - Gerencias de la Municipalidad Provincial de Maynas<br/>
+                        - Municipalidades distritales de Belén, Punchana y San Juan Bautista<br/>
+                        - Colegio de arquitectos de Loreto y de Perú<br/><br/>
+
+                        Reuniones de presentación de los planes territoriales e identificación de oportunidades de colaboración con los alcaldes y sus equipos técnicos (gerencias de obras y desarrollo urbano)<br/><br/>
+
+                        - Municipalidad Distrital de Belén<br/>
+                        - Municipalidad Distrital de Punchana<br/>
+                        - Municipalidad Distrital de San Juan Bautista<br/>
+                        - Municipalidad Distrital de Alto Nanay<br/>
+                        - Municipalidad Distrital de Indiana<br/>
+                        - Municipalidad Distrital de las Amazonas<br/>
+                        - Municipalidad Distrital de Mazán<br/><br/>
+
+                        Reuniones de presentación de los planes territoriales e identificación de oportunidades de colaboración con actores del nivel nacional, colegios profesionales y sociedad civil<br/><br/>
+
+                        - Ministerio de Vivienda Construcción y Saneamiento (MVCS)<br/>
+                        - Marina de Guerra del Perú - Servicio de Hidrografía y Navegación de la Amazonía<br/>
+                        - Centro Nacional de Estimación, Prevención y Reducción del Riesgo de Desastres (CENEPRED)<br/>
+                        - Colegio de Arquitectos de Loreto<br/>
+                        - Colegio de Economistas de Loreto<br/>
+                        - Consejo Regional de Decanos de Colegios Profesionales Loreto - CONREDE<br/>
+                        - Plan Binacional de Desarrollo de la Región Fronteriza Perú Ecuador<br/>
+                        - Fundación Internacional para el desarrollo de Gobiernos Confiables (FIDEGOC)<br/>
+                        - Acuerdo por Iquitos<br/><br/>
+
+                        Reuniones de seguimiento de los acuerdos de convenio con el Gobierno Regional de Loreto y de trabajo colaborativo para el cumplimiento de metas:<br/><br/>
+
+                        - Gerencia Regional de planeamiento Presupuesto e Inversión Pública<br/>
+                        - Gerencia Regional Ambiental
+                    </p>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- <button id="verMasBtn" class="ver-mas-btn">Ver más publicaciones</button> -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Modal de detalle de publicación -->
+      <div id="publicacionModal" class="modal-overlay hidden">
+        <div class="modal-content">
+          <button class="close-modal-btn" aria-label="Cerrar modal">&times;</button>
+          <div class="modal-header">
+            <span id="modalCategory" class="detail-category"></span>
+            <h2 id="modalTitle"></h2>
+            <div class="noticia-fecha" id="modalDate"></div>
+          </div>
+          <img id="modalImage" class="modal-image" src="" alt="" />
+          <div id="modalBody" class="modal-body"></div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <p>&copy; 2026 OSTI. Todos los derechos reservados.</p>
+            <div class="visitor-counter">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>Visitas:
+              <a href="https://www.hitwebcounter.com" target="_blank" title="Contador de visitas">
+                <img src="https://hitwebcounter.com/counter/counter.php?page=20729038&style=0018&nbdigits=6&type=page&initCount=0" 
+                     alt="Contador de visitas" 
+                     style="border: 0; height: 20px;"/>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
