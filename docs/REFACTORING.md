@@ -78,23 +78,98 @@ All pages (including index.html and publicaciones.html) now have consistent navi
 <li><a href="contacto.html">CONTACTO</a></li>
 ```
 
+## CSS Refactoring - May 15, 2026
+
+### Problem
+CSS specificity conflicts caused layout issues (e.g., `.consulta-content` grid on pat-maynas.html). A single `styles.css` contained all styles for all pages with duplicate rules and `!important` overrides.
+
+### Solution
+Separate CSS files per page with a shared base.
+
+### New Structure
+```
+src/style/
+├── shared.css          (base styles, ~3245 lines)
+├── aliados.css
+├── contacto.css
+├── muestra-virtual.css
+├── participamos.css
+├── pat-maynas.css
+├── pdm-iquitos.css
+├── planes-territoriales.css
+├── publicaciones.css
+└── recursos.css
+```
+
+Each page CSS imports shared base:
+```css
+@import url('shared.css');
+/* Page-specific styles below */
+```
+
+### Pages Location
+All pages moved to `src/pages/`:
+```
+src/pages/
+├── aliados.html
+├── contacto.html
+├── muestra-virtual.html
+├── participamos.html
+├── pat-maynas.html
+├── pdm-iquitos.html
+├── planes-territoriales.html
+├── publicaciones.html
+└── recursos.html
+```
+
+### HTML Updates
+Each page's `<link>` updated to reference its own CSS:
+```html
+<link rel="stylesheet" href="../src/style/pat-maynas.css" />
+```
+
+### Benefits
+- Page-specific styles isolated, easier to maintain
+- Shared styles centralized in `shared.css`
+- Reduced CSS specificity conflicts
+- Clear ownership of styles per page
+
+### Remaining Work
+- Extract page-specific rules from `shared.css` into individual page CSS files
+- Remove duplicate/unused styles from shared.css
+- Clean up inline styles in HTML pages
+- Address GRID_ISSUE.md resolved items
+
+---
+
 ## Files Structure After Refactoring
 
 ```
 plan_maynas_page/
 ├── index.html              (Home - Hero + Projects overview)
 ├── publicaciones.html      (News/Publications)
-├── planes-territoriales.html
-├── participamos.html
-├── aliados.html
-├── recursos.html
-├── muestra-virtual.html
-├── pdm-iquitos.html
-├── pat-maynas.html
-├── contacto.html
-├── styles.css
+├── styles.css              (Original, kept for index.html)
 ├── script.js
 └── src/
+    ├── pages/
+    │   ├── planes-territoriales.html
+    │   ├── participamos.html
+    │   ├── aliados.html
+    │   ├── recursos.html
+    │   ├── muestra-virtual.html
+    │   ├── pdm-iquitos.html
+    │   ├── pat-maynas.html
+    │   └── contacto.html
+    ├── style/
+    │   ├── shared.css          (base styles)
+    │   ├── planes-territoriales.css
+    │   ├── participamos.css
+    │   ├── aliados.css
+    │   ├── recursos.css
+    │   ├── muestra-virtual.css
+    │   ├── pdm-iquitos.css
+    │   ├── pat-maynas.css
+    │   └── contacto.css
     └── docs/
         └── (images, PDFs, etc.)
 ```
@@ -116,8 +191,12 @@ plan_maynas_page/
 
 4. **No Content Removal from index.html**: Content sections remain in index.html as they are still visible when scrolling; they can be cleaned up in a future refactoring if desired
 
-## Next Steps (Optional)
+5. **CSS Separation**: Each page has its own CSS file that imports shared base. Page-specific overrides go in individual CSS files, shared styles in shared.css.
+
+## Next Steps
 - Remove duplicate content from index.html now that dedicated pages exist
+- Extract remaining page-specific rules from shared.css to their respective files
 - Add breadcrumb navigation for better UX
 - Consider adding a "back to top" button on longer pages
 - Add smooth scrolling for anchor links on same-page sections
+- Clean up inline styles across all HTML pages

@@ -2016,9 +2016,27 @@ img {
 .consulta-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
   gap: var(--spacing-xl);
   align-items: start;
   margin-top: var(--spacing-xl);
+}
+
+.consulta-detalles {
+  grid-column: 2;
+  grid-row: 1;
+  margin: var(--spacing-lg) 0;
+}
+
+.consulta-info {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.mapa-imagen {
+  grid-column: 1;
+  grid-row: 2;
+  width: 100%;
 }
 
 .consulta-info h3 {
@@ -2785,6 +2803,15 @@ img {
   color: white !important;
 }
 
+.dark-mode .participamos-div {
+  background: #3a6499;
+}
+
+.dark-mode .participamos-div p,
+.dark-mode .participamos-div h3 {
+  color: white !important;
+}
+
 .dark-mode .planes-territoriales h2,
 .dark-mode .planes-territoriales p,
 .dark-mode .planes-territoriales ul,
@@ -2794,6 +2821,56 @@ img {
 
 .dark-mode .planes-territoriales {
   background: var(--bg-alt);
+}
+
+.dark-mode .page-title {
+  color: white !important;
+}
+
+.dark-mode .consulta-detalles {
+  background: var(--bg-alt);
+}
+
+.dark-mode .detalle-item {
+  background: var(--bg-soft);
+  border-color: var(--border-color);
+}
+
+.dark-mode .detalle-item strong {
+  color: white !important;
+}
+
+.dark-mode .detalle-item p {
+  color: var(--light-text) !important;
+}
+
+.dark-mode .consulta-info h2 {
+  color: white !important;
+}
+
+.dark-mode .consulta-info {
+  color: var(--light-text) !important;
+}
+
+.dark-mode #aliados p,
+.dark-mode #aliados strong,
+.dark-mode #aliados li,
+.dark-mode #recursos p,
+.dark-mode #recursos strong,
+.dark-mode #recursos li {
+  color: white !important;
+}
+
+.dark-mode #recursos a[target="_blank"] {
+  color: white !important;
+  text-decoration: underline;
+}
+
+.dark-mode .ver-publicacion {
+  color: white !important;
+  font-weight: bold;
+  text-decoration: underline;
+  background: var(--bg-color) !important;
 }
 
 .instrumentos-pilares-wrapper {
@@ -2817,6 +2894,50 @@ img {
 
 .dark-mode .planes-territoriales {
   background: var(--bg-alt);
+}
+
+.dark-mode #consulta-pat {
+  background: #ffffff;
+}
+
+.dark-mode .consulta-header {
+  background: #ffffff;
+  border-radius: var(--border-radius);
+}
+
+.dark-mode .consulta-header .section-title {
+  color: #171b46 !important;
+}
+
+.dark-mode .consulta-info {
+  color: #5A5D6E !important;
+}
+
+.dark-mode .consulta-info h2 {
+  color: #171b46 !important;
+}
+
+.dark-mode .consulta-detalles {
+  background: #ffffff;
+  border-radius: var(--border-radius);
+}
+
+.dark-mode .detalle-item {
+  background: #f5f5f5;
+  border-color: rgba(53, 55, 77, 0.1);
+}
+
+.dark-mode .detalle-item strong {
+  color: #171b46 !important;
+}
+
+.dark-mode .detalle-item p {
+  color: #5A5D6E !important;
+}
+
+.dark-mode .mapa-imagen img {
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 15px var(--shadow-color);
 }
 
 .aliados-container {
