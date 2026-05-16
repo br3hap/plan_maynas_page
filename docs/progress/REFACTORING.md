@@ -67,15 +67,15 @@ All pages (including index.html and publicaciones.html) now have consistent navi
 
 ```html
 <li><a href="index.html#inicio">INICIO</a></li>
-<li><a href="planes-territoriales.html">PLANES TERRITORIALES</a></li>
-<li><a href="participamos.html">PARTICIPAMOS</a></li>
-<li><a href="aliados.html">NUESTROS ALIADOS</a></li>
-<li><a href="recursos.html">RECURSOS</a></li>
-<li><a href="publicaciones.html">NOTICIAS Y ACTUALIZACIONES</a></li>
-<li><a href="muestra-virtual.html">MUESTRA VIRTUAL</a></li>
-<li><a href="pdm-iquitos.html">PDM IQUITOS</a></li>
-<li><a href="pat-maynas.html">PAT MAYNAS</a></li>
-<li><a href="contacto.html">CONTACTO</a></li>
+<li><a href="src/pages/planes-territoriales.html">PLANES TERRITORIALES</a></li>
+<li><a href="src/pages/participamos.html">PARTICIPAMOS</a></li>
+<li><a href="src/pages/aliados.html">NUESTROS ALIADOS</a></li>
+<li><a href="src/pages/recursos.html">RECURSOS</a></li>
+<li><a href="src/pages/publicaciones.html">NOTICIAS Y ACTUALIZACIONES</a></li>
+<li><a href="src/pages/muestra-virtual.html">MUESTRA VIRTUAL</a></li>
+<li><a href="src/pages/pdm-iquitos.html">PDM IQUITOS</a></li>
+<li><a href="src/pages/pat-maynas.html">PAT MAYNAS</a></li>
+<li><a href="src/pages/contacto.html">CONTACTO</a></li>
 ```
 
 ## CSS Refactoring - May 15, 2026
@@ -147,7 +147,6 @@ Each page's `<link>` updated to reference its own CSS:
 ```
 plan_maynas_page/
 ├── index.html              (Home - Hero + Projects overview)
-├── publicaciones.html      (News/Publications)
 ├── styles.css              (Original, kept for index.html)
 ├── script.js
 └── src/
