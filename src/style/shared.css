@@ -2699,38 +2699,16 @@ img {
   }
 
 /* Proyecto Destacado */
-.proyecto-destacado {
-  background: #E5D3c1;
-  padding: var(--spacing-xl);
-  border-radius: var(--border-radius-lg);
-  /* border: 2px solid #0092FF; */
-  box-shadow: 0 10px 30px var(--shadow-lg);
-  margin-bottom: var(--spacing-xl);
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  padding-left: calc(50vw - 50%);
-  padding-right: calc(50vw - 50%);
-  border-left: none;
-  border-right: none;
-  border-radius: 0;
-}
+/* .proyecto-destacado moved to planes-territoriales.css */
 
-.hitos-del-proyecto {
-  background: #3db877;
-  padding: var(--spacing-xl);
-  border-radius: var(--border-radius-lg);
-  /* border: 2px solid #0092FF; */
-  box-shadow: 0 10px 30px var(--shadow-lg);
-  margin-bottom: var(--spacing-xl);
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  padding-left: calc(50vw - 50%);
-  padding-right: calc(50vw - 50%);
-  border-left: none;
-  border-right: none;
-  border-radius: 0;
-}
-.participamos-div {
+/* Hitos del Proyecto */
+/* Styles unchanged - same in both modes */
+
+/* Planes Territoriales */
+/* .planes-territoriales moved to planes-territoriales.css */
+
+/* Instrumentos Pilares Wrapper */
+/* .instrumentos-pilares-wrapper moved to planes-territoriales.css */
   background: #4888c8;
   padding: var(--spacing-xl);
   border-radius: var(--border-radius-lg);
@@ -2778,31 +2756,6 @@ img {
   border-radius: 0;
 }
 
-.planes-territoriales {
-  background: #ffffff;
-  padding: var(--spacing-xl);
-  border-radius: var(--border-radius-lg);
-  /* border: 2px solid #0092FF; */
-  box-shadow: 0 10px 30px var(--shadow-lg);
-  margin-bottom: var(--spacing-xl);
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  padding-left: calc(50vw - 50%);
-  padding-right: calc(50vw - 50%);
-  border-left: none;
-  border-right: none;
-  border-radius: 0;
-}
-
-.dark-mode .instrumentos-pilares-wrapper {
-  background: var(--bg-alt);
-}
-
-.dark-mode .instrumentos-pilares-wrapper ul,
-.dark-mode .instrumentos-pilares-wrapper li {
-  color: white !important;
-}
-
 .dark-mode .participamos-div {
   background: #3a6499;
 }
@@ -2810,17 +2763,6 @@ img {
 .dark-mode .participamos-div p,
 .dark-mode .participamos-div h3 {
   color: white !important;
-}
-
-.dark-mode .planes-territoriales h2,
-.dark-mode .planes-territoriales p,
-.dark-mode .planes-territoriales ul,
-.dark-mode .planes-territoriales li {
-  color: white !important;
-}
-
-.dark-mode .planes-territoriales {
-  background: var(--bg-alt);
 }
 
 .dark-mode .page-title {
@@ -2871,29 +2813,6 @@ img {
   font-weight: bold;
   text-decoration: underline;
   background: var(--bg-color) !important;
-}
-
-.instrumentos-pilares-wrapper {
-  background: #ffffff;
-  padding: var(--spacing-xl);
-  border-radius: var(--border-radius-lg);
-  box-shadow: 0 10px 30px var(--shadow-lg);
-  margin-bottom: var(--spacing-xl);
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  padding-left: calc(50vw - 50%);
-  padding-right: calc(50vw - 50%);
-  border-left: none;
-  border-right: none;
-  border-radius: 0;
-}
-
-.dark-mode .instrumentos-pilares-wrapper {
-  background: var(--bg-alt);
-}
-
-.dark-mode .planes-territoriales {
-  background: var(--bg-alt);
 }
 
 .dark-mode #consulta-pat {
