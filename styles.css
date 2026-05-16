@@ -2776,6 +2776,49 @@ img {
   border-radius: 0;
 }
 
+.dark-mode .instrumentos-pilares-wrapper {
+  background: var(--bg-alt);
+}
+
+.dark-mode .instrumentos-pilares-wrapper ul,
+.dark-mode .instrumentos-pilares-wrapper li {
+  color: white !important;
+}
+
+.dark-mode .planes-territoriales h2,
+.dark-mode .planes-territoriales p,
+.dark-mode .planes-territoriales ul,
+.dark-mode .planes-territoriales li {
+  color: white !important;
+}
+
+.dark-mode .planes-territoriales {
+  background: var(--bg-alt);
+}
+
+.instrumentos-pilares-wrapper {
+  background: #ffffff;
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 10px 30px var(--shadow-lg);
+  margin-bottom: var(--spacing-xl);
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+}
+
+.dark-mode .instrumentos-pilares-wrapper {
+  background: var(--bg-alt);
+}
+
+.dark-mode .planes-territoriales {
+  background: var(--bg-alt);
+}
+
 .aliados-container {
   background: #ffffff;
   /* background: linear-gradient(135deg, #E5D3c1 0%, rgba(0, 146, 255, 0.1) 100%); */
