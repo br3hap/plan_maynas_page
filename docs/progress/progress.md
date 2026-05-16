@@ -1,0 +1,99 @@
+# Plan Maynas - Progreso del Proyecto
+
+## Avances Recientes
+
+### muestra-virtual.html
+- [x] Corregidos paths de imágenes: `src="src/docs/` → `src="../docs/`
+- [x] Eliminado h2 "Talleristas"
+- [x] Eliminado h2 "Videos"
+- [x] Creado `muestra-virtual.css` con estilos extraídos de `shared.css`
+- [x] Fondo `.muestra-div` configurable: `#468AC4` (light) / `#3A7AA8` (dark)
+- [x] Sección galería (slider) dentro del div azul
+- [x] Secciones talleristas, videos y equipo dentro del div azul
+- [x] Texto forzado a blanco en container de galería y secciones azules
+- [x] Estilos dark mode para overlay de galería y video-info
+- [x] Estilos dark mode para slider buttons y dots
+- [x] Videos cambiados de `<iframe>` a `<video src="../video/..." controls>`
+
+### participamos.html
+- [x] Extraídos estilos de `shared.css` hacia `participamos.css`
+- [x] Creado `.participamos-div` wrapper en el HTML
+- [x] Fondo azul `#4888C8` para ambos modos (light y dark)
+- [x] Texto (h1, p, h3) forzado a blanco en dark mode
+- [x] Cards no cambian (mantienen estilos de `shared.css`)
+
+### aliados.html
+- [x] Extraídos estilos de `shared.css` hacia `aliados.css`
+- [x] Creado `.aliados-div` wrapper en el HTML
+- [x] Fondo blanco (`#FFFFFF`) siempre, no cambia con dark mode
+- [x] Texto (h1, p, h3, strong, li) forzado a oscuro (`#171b46`) en ambos modos
+- [x] Cards cambian con dark mode (背景色 follows `var(--bg-color)`)
+- [x] Títulos de cards (h3) forzados a blanco en dark mode para contraste
+
+---
+
+## Problemas Encontrados y Soluciones
+
+### allies.html - Especificidad de CSS con dark mode
+**Problema:** El texto (p, strong, li) desaparecía en dark mode porque el color del texto coincidía con el fondo oscuro, a pesar de tener reglas `!important`.
+
+**Causa:** El tema dark mode se aplica via clase `.dark-mode` en `<body>`. Las reglas con `.aliados-div` (clase en un div) no tenían suficiente especificidad para override certain inherited styles.
+
+**Solución:** Se aumentó la especificidad usando `#root .aliados-div` en lugar de solo `.aliados-div`, y se incluyó `page-title`, `p`, `h3`, `strong` y `li` en las reglas de color oscuro.
+
+**Lección:** Cuando se usan `!important` y aún no funciona, verificar la especificidad real de los selectores. En este caso `body.dark-mode .aliados-div p` tiene mayor especificidad que `.aliados-div p`.
+
+---
+
+## Pendiente
+
+### muestra-virtual.html
+- [ ] Subir videos a `src/video/` (carpeta oculta de git, fue removida para reducir peso)
+- [ ] Verificar que los videos se cargan correctamente con el nuevo path `../video/video_1.mp4`
+
+### paths de imágenes
+- [x] Corregido en todos los HTML (verificado con grep - no hay más `src="src/docs/`)
+
+### generales
+- [ ] Verificar que todos los botones y links funcionan
+- [ ] Testear dark mode en todas las páginas
+- [ ] Verificar responsividad en mobile
+- [ ] Revisar si hay más estilos huérfanos en `shared.css` que pertenezcan a páginas específicas
+
+---
+
+## Estructura de Estilos Actual
+
+```
+src/style/
+├── shared.css        ← estilos globales compartidos
+├── muestra-virtual.css ← estilos específicos de muestra-virtual.html
+├── participamos.css ← estilos específicos de participamos.html
+├── aliados.css      ← estilos específicos de aliados.html
+├── planes-territoriales.css
+├── index.css (?)
+└── otros.css
+```
+
+---
+
+## Explicación de Paths
+
+Desde `src/pages/muestra-virtual.html`:
+
+| Recurso | Path correcto | Notes |
+|---------|--------------|-------|
+| Imágenes slider | `../docs/img/slider/img_1.PNG` | `..` sube a `src/`, luego entra a `docs/` |
+| Videos | `../video/video_1.mp4` | Cuando se restauren, van en `src/video/` |
+| Logo | `../docs/logo-plan.png` | ✓ Funciona |
+
+---
+
+## Notas Técnicas
+
+- Los estilos de `.muestra-div` fueron extraídos de `shared.css` hacia `muestra-virtual.css`
+- El div `.muestra-div` se usa en muestra-virtual.html para agrupar las secciones con fondo azul
+- Los videos fueron cambiados de `<iframe>` a `<video>` tag con path `../video/video_1.mp4`
+- La carpeta `src/video/` fue removida de git (ocultada) para reducir peso del repo
+- Cuando se restauren los videos, deben subirse a `src/video/`
+- **CSS Specificity Issue:** En dark mode, reglas como `.dark-mode .aliados-div p` superan en especificidad a `.aliados-div p` aunque ambas usen `!important`. Solución: usar `#root .aliados-div p` para mayor especificidad.
