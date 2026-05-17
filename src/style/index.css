@@ -1,0 +1,226 @@
+/* Index.html Specific Styles - Extracted from styles.css */
+
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  z-index: 10000;
+  background: transparent;
+}
+
+.reading-progress-fill {
+  height: 100%;
+  background: var(--gradient-primary);
+  width: 0%;
+  transition: width 0.1s ease-out;
+  box-shadow: 0 0 10px rgba(15, 23, 42, 0.15);
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 4px 20px var(--shadow-color);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: var(--transition);
+}
+
+.theme-toggle:hover {
+  transform: translateY(-3px) rotate(15deg);
+  box-shadow: 0 6px 25px var(--shadow-lg);
+  border-color: var(--accent-color);
+  background: var(--accent-color);
+}
+
+.theme-toggle svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: #FFFFFF;
+  stroke-width: 2;
+  transition: var(--transition);
+}
+
+.typing-text {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 0.15em solid #E16C49;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  max-width: fit-content;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--primary-color) }
+}
+
+.backend-highlight {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.highlight {
+  color: #E16C49;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-top: var(--header-height);
+  background-image: url('src/docs/pruebafoto.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(
+      145deg, 
+      rgba(53, 55, 77, 0.92) 0%, 
+      rgba(53, 55, 77, 0.75) 30%,
+      rgba(74, 188, 129, 0.65) 70%,
+      rgba(70, 138, 196, 0.6) 100%
+    );
+  z-index: 1;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(
+      ellipse at 20% 30%, 
+      rgba(225, 108, 73, 0.25) 0%, 
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 80% 70%, 
+      rgba(70, 138, 196, 0.2) 0%, 
+      transparent 50%
+    );
+  z-index: 2;
+  animation: pulse 20s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: var(--spacing-xl) 0;
+  position: relative;
+  z-index: 3;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: var(--spacing-xs);
+  color: #ffffff;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-md);
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-lg);
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.animate-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fade-in 0.8s forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.delay-2 {
+  animation-delay: 0.4s;
+}
+
+.delay-3 {
+  animation-delay: 0.6s;
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    background-attachment: scroll;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .theme-toggle {
+    top: 85px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+  }
+}

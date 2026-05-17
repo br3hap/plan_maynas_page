@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Plan Maynas - Amazonía y ciudad sostenible</title>
     <link rel="icon" href="src/docs/img.png" type="image/png">
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="src/style/shared.css" />
+    <link rel="stylesheet" href="src/style/index.css" />
     <meta name="description" content="Plan Maynas: Proyecto de planificación territorial sostenible para la provincia de Maynas, Amazonía y ciudad sostenible." />
     <meta name="author" content="Breithner Aquituari" />
   </head>
@@ -51,7 +52,7 @@
               <span></span>
             </button> 
             <ul class="menu" role="list">
-              <li><a href="#inicio" class="active">INICIO</a></li>
+              <li><a href="index.html" class="active">INICIO</a></li>
               <li><a href="src/pages/planes-territoriales.html" style="position: static">PLANES TERRITORIALES</a></li>
               <li><a href="src/pages/participamos.html" style="position: static">PARTICIPAMOS</a></li>
               <li><a href="src/pages/aliados.html" style="position: static">NUESTROS ALIADOS</a></li>
@@ -108,75 +109,143 @@
       <section id="proyectos" class="section bg-alt">
         <div class="container">
           <h2 class="section-title">Secciones</h2>
-
-
-
           <div class="projects-grid">
-
-            <div class="project-card" data-tags="Planes Territoriales">
+            <div class="project-card">
               <div class="project-info">
                 <h3>Planes Territoriales</h3>
                 <div class="project-description">
                   <p class="description-short">¿Qué es un Plan y cuáles son sus alcances?</p>
-                  <p class="description-full" style="display: none;">Plan Maynas desarrolla tres herramientas fundamentales: Plan de Acondicionamiento Territorial de Maynas al 2045 (PAT Maynas): Definirá cómo habitamos e integramos el desarrollo de nuestros 11 distritos sin dañar el entorno natural. Esta gestión del territorio permite una provisión equitativa de servicios entre las áreas urbanas y rurales.</p>
-                  <!-- <button href="#planes" class="read-more-btn" aria-label="Leer más sobre este proyecto">Leer más</button> -->
-                   <a href="#planes" class="read-more-btn" aria-label="Leer más sobre los planes territoriales">Leer más</a>
-                </div>              
+                </div>
               </div>
+              <a href="src/pages/planes-territoriales.html" class="read-more-btn">Ver más →</a>
             </div>
-            
-            <div class="project-card" data-tags="Participa">
+
+            <div class="project-card">
               <div class="project-info">
-                <h3>Participa</h3>
+                <h3>Participamos</h3>
                 <div class="project-description">
-                  <p class="description-short">¿Cuáles son los espacios para participar de la elaboración de lod Planes?</p>
-                  <p class="description-full" style="display: none;">Creemos que la planificación territorial no es un proceso unilateral, sino una construcción colectiva. Por eso, promovemos un modelo de trabajo articulado que conecta a instituciones, organizaciones y ciudadanía en un mismo propósito: construir el futuro de nuestro territorio respetando su identidad y legado..</p>
-                  <!-- <button class="read-more-btn" aria-label="Leer más sobre este proyecto">Leer más</button> -->
-                   <a href="#participaciones" class="read-more-btn" aria-label="Leer más sobre participaciones">Leer más</a>
-                </div>              
+                  <p class="description-short">Espacios para participar de la elaboración de los Planes</p>
+                </div>
               </div>
+              <a href="src/pages/participamos.html" class="read-more-btn">Ver más →</a>
             </div>
-            
-            <div class="project-card" data-tags="Noticias y Actualizaciones">
+
+            <div class="project-card">
               <div class="project-info">
                 <h3>Noticias y Actualizaciones</h3>
                 <div class="project-description">
                   <p class="description-short">¿Qué hemos estado haciendo y qué está por venir?</p>
-                  <p class="description-full" style="display: none;">Plan Maynas, impulsado por la Municipalidad Provincial de Maynas, a través de la Gerencia</p>
-                  <!-- <button class="read-more-btn" aria-label="Leer más sobre este proyecto">Leer más</button> -->
-
-                  <a href="src/pages/publicaciones.html" class="read-more-btn" aria-label="Leer más sobre noticias y actualizaciones">Leer más</a>                
-                </div>              
+                </div>
               </div>
-            </div> 
-
-            <div class="project-card" data-tags="Consulta Pública">
-              <div class="project-info">
-                <h3>Plan de Desarrollo Metropolitano de la Ciudad de Iquitos 2025-2045 - PDM Iquitos 2045</h3>
-                <div class="project-description">
-                  <!-- <p class="description-short">¿Qué es la consulta pública?</p> -->
-                  <p class="description-full" style="display: none;">Aprobado a través de la ORDENANZA MUNICIPAL N° 005-2026-A-MPM. El PDM IQUITOS 2045, constituye el instrumento técnico normativo que servirá para orientar el desarrollo urbano sostenible de los cinco (05) distritos que conforman el Área Metropolitana de Iquitos: Punchana, Belén, San Juan Bautista, Iquitos e Indiana.</p>
-                  <!-- <button class="read-more-btn" aria-label="Leer más sobre este proyecto">Leer más</button> -->
-                   <a href='#consulta' class="read-more-btn" aria-label="Leer más sobre consulta pública PDM">Leer más</a>
-                </div>              
-              </div>
+              <a href="src/pages/publicaciones.html" class="read-more-btn">Ver más →</a>
             </div>
 
-            <div class="project-card" data-tags="Consulta Pública">
+            <div class="project-card">
+              <div class="project-info">
+                <h3>PDM Iquitos 2045</h3>
+                <div class="project-description">
+                  <p class="description-short">Plan de Desarrollo Metropolitano de la Ciudad de Iquitos</p>
+                </div>
+              </div>
+              <a href="src/pages/pdm-iquitos.html" class="read-more-btn">Ver más →</a>
+            </div>
+
+            <div class="project-card">
               <div class="project-info">
                 <h3>Consulta Pública del PAT Maynas</h3>
                 <div class="project-description">
                   <p class="description-short">¿Qué es la Consulta Pública del PAT Maynas?</p>
-                  <p class="description-full" style="display: none;">Todos los aportes ingresados serán respondidos y considerados para la evaluación final de la propuesta del PAT Maynas.</p>
-                   <a href='#consulta-pat' class="read-more-btn" aria-label="Leer más sobre consulta pública PDM">Leer más</a>
-                </div>              
+                </div>
               </div>
-            </div> 
+              <a href="src/pages/pat-maynas.html" class="read-more-btn">Ver más →</a>
+            </div>
 
- 
+            <div class="project-card">
+              <div class="project-info">
+                <h3>Muestra Virtual</h3>
+                <div class="project-description">
+                  <p class="description-short">La Ciudad de mis Sueños, Taller de Ideas Urbanas</p>
+                </div>
+              </div>
+              <a href="src/pages/muestra-virtual.html" class="read-more-btn">Ver más →</a>
+            </div>
+
+            <div class="project-card">
+              <div class="project-info">
+                <h3>Recursos</h3>
+                <div class="project-description">
+                  <p class="description-short">Documentos y materiales del proyecto</p>
+                </div>
+              </div>
+              <a href="src/pages/recursos.html" class="read-more-btn">Ver más →</a>
+            </div>
+
+            <div class="project-card">
+              <div class="project-info">
+                <h3>Contacto</h3>
+                <div class="project-description">
+                  <p class="description-short">Cómo comunicarse con el equipo</p>
+                </div>
+              </div>
+              <a href="#contacto" class="read-more-btn">Ver más →</a>
+            </div>
           </div>
         </div>
       </section>
+
+      <!-- Sección de Contacto -->
+      <section id="contacto" class="section bg-alt">
+        <div class="container">
+          <h2 class="section-title">Contacto</h2>
+          <div class="contact-container">
+            <div class="contact-info">
+              <div class="contact-item">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="contact-text">
+                  <h3>Email</h3>
+                  <p>asistente_planesterritoriales@munimaynas.gob.pe</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="contact-text">
+                  <h3>Dirección</h3>
+                  <p>Jr. Echenique 350 - Plaza Sargento Lores, Loreto</p>
+                </div>
+              </div>
+              <div class="social-links">
+                <span>Búscanos en nuestras redes sociales:</span>
+                <a href="https://www.facebook.com/planmaynas" target="_blank" class="social-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="2"/>
+                    <path d="M13.5 8H15V6h-1.5C11.57 6 11 7.43 11 8.75V10H9.5v2H11v6h2.5v-6H15l.5-2h-2v-1.25c0-.4.1-.75.5-.75z" fill="currentColor"/>
+                  </svg>
+                </a>
+                <a href="https://www.linkedin.com/company/planmaynas/" target="_blank" class="social-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="2"/>
+                    <rect x="6" y="9" width="2.5" height="8" fill="currentColor"/>
+                    <circle cx="7.25" cy="6.5" r="1.25" fill="currentColor"/>
+                    <path d="M11 9h2.3v1.1h.03c.32-.6 1.1-1.23 2.27-1.23 2.43 0 2.88 1.6 2.88 3.68V17h-2.5v-4.02c0-.96-.02-2.2-1.34-2.2-1.34 0-1.55 1.05-1.55 2.13V17H11z" fill="currentColor"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
 
       <!-- Sección Planes Territoriales -->
       <section id="planes">

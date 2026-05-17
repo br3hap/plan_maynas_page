@@ -38,6 +38,14 @@
 - [x] CSS simplificado: flexbox column wrappers en lugar de grid placement con `grid-column`/`grid-row`
 - [x] Ver `docs/progress/GRID_ISSUE.md` para detalles completos
 
+### index.html - Refactorización Total
+- [x] Removido código de secciones detalladas (ya existen en `src/pages/`)
+- [x] Conservado solo: header, hero, projects grid (simplificado a link-cards), contacto, footer
+- [x] Creado `src/style/index.css` con estilos específicos del index.html
+- [x] Extraídos: `.hero`, `.reading-progress`, `.theme-toggle`, `.typing-text`, `.animate-fade-in`
+- [x] Actualizado `<head>` para cargar `src/style/shared.css` + `src/style/index.css`
+- [x] Eliminado `styles.css` (era ~90% duplicado de `shared.css`)
+
 ---
 
 ## Problemas Encontrados y Soluciones
@@ -74,13 +82,17 @@
 
 ```
 src/style/
-├── shared.css        ← estilos globales compartidos
+├── shared.css        ← estilos globales compartidos (todas las páginas)
+├── index.css        ← estilos específicos de index.html (hero, popup, animaciones)
 ├── muestra-virtual.css ← estilos específicos de muestra-virtual.html
 ├── participamos.css ← estilos específicos de participamos.html
 ├── aliados.css      ← estilos específicos de aliados.html
 ├── planes-territoriales.css
-├── index.css (?)
-└── otros.css
+├── contacto.css     ← (vacío, placeholder)
+├── pat-maynas.css  ← (vacío, placeholder)
+├── pdm-iquitos.css ← (vacío, placeholder)
+├── publicaciones.css ← (vacío, placeholder)
+└── recursos.css    ← (vacío, placeholder)
 ```
 
 ---
@@ -95,6 +107,15 @@ Desde `src/pages/muestra-virtual.html`:
 | Videos | `../video/video_1.mp4` | Cuando se restauren, van en `src/video/` |
 | Logo | `../docs/logo-plan.png` | ✓ Funciona |
 
+Desde `index.html` (raíz):
+
+| Recurso | Path correcto | Notes |
+|---------|--------------|-------|
+| shared.css | `src/style/shared.css` | Estilos globales |
+| index.css | `src/style/index.css` | Estilos específicos del index |
+| Imágenes hero | `src/docs/pruebafoto.png` | Acceso directo |
+| Logo | `src/docs/logo-plan.png` | Acceso directo |
+
 ---
 
 ## Notas Técnicas
@@ -103,5 +124,5 @@ Desde `src/pages/muestra-virtual.html`:
 - El div `.muestra-div` se usa en muestra-virtual.html para agrupar las secciones con fondo azul
 - Los videos fueron cambiados de `<iframe>` a `<video>` tag con path `../video/video_1.mp4`
 - La carpeta `src/video/` fue removida de git (ocultada) para reducir peso del repo
-- Cuando se restauren los videos, deben subirse a `src/video/`
 - **CSS Specificity Issue:** En dark mode, reglas como `.dark-mode .aliados-div p` superan en especificidad a `.aliados-div p` aunque ambas usen `!important`. Solución: usar `#root .aliados-div p` para mayor especificidad.
+- **index.html Refactor:** El archivo `index.html` fue simplificado manteniendo solo header, hero y link-cards. El código de secciones detalladas fue removido (ya existe en `src/pages/`). El archivo `styles.css` fue eliminado ya que era ~90% duplicado de `shared.css`.
