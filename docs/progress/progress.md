@@ -40,11 +40,19 @@
 
 ### index.html - Refactorización Total
 - [x] Removido código de secciones detalladas (ya existen en `src/pages/`)
-- [x] Conservado solo: header, hero, projects grid (simplificado a link-cards), contacto, footer
+- [x] Conservado solo: header, hero, projects grid (simplificado a link-cards), footer
+- [x] Removida sección Contacto (existe página dedicada `src/pages/contacto.html`)
 - [x] Creado `src/style/index.css` con estilos específicos del index.html
 - [x] Extraídos: `.hero`, `.reading-progress`, `.theme-toggle`, `.typing-text`, `.animate-fade-in`
 - [x] Actualizado `<head>` para cargar `src/style/shared.css` + `src/style/index.css`
 - [x] Eliminado `styles.css` (era ~90% duplicado de `shared.css`)
+
+### Fixes de Navegación y Layout (Mayo 2025)
+- [x] Corregidos links en `src/pages/*`: `index.html` → `../index.html` (evita directory listing)
+- [x] Corregido logo link en `src/pages/*`: `index.html#inicio` → `../index.html#inicio`
+- [x] Actualizado card de Contacto en index: apunta a `src/pages/contacto.html`
+- [x] Fix alineación botones "Ver más →" en cards del index: movidos dentro de `.project-info`, flexbox layout
+- [x] Fix footer y layout de `contacto.css`: flexbox para sticky footer, cards estilizadas, social links circulares
 
 ---
 
@@ -71,7 +79,7 @@
 - [x] Corregido en todos los HTML (verificado con grep - no hay más `src="src/docs/`)
 
 ### generales
-- [ ] Verificar que todos los botones y links funcionan
+- [x] Verificar que todos los botones y links funcionan (links a index corregidos)
 - [ ] Testear dark mode en todas las páginas
 - [ ] Verificar responsividad en mobile
 - [ ] Revisar si hay más estilos huérfanos en `shared.css` que pertenezcan a páginas específicas
@@ -88,7 +96,7 @@ src/style/
 ├── participamos.css ← estilos específicos de participamos.html
 ├── aliados.css      ← estilos específicos de aliados.html
 ├── planes-territoriales.css
-├── contacto.css     ← (vacío, placeholder)
+├── contacto.css     ← estilos específicos de contacto.html (footer sticky, cards, social links)
 ├── pat-maynas.css  ← (vacío, placeholder)
 ├── pdm-iquitos.css ← (vacío, placeholder)
 ├── publicaciones.css ← (vacío, placeholder)

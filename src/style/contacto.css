@@ -1,3 +1,100 @@
 @import url('shared.css');
 
 /* Page-specific styles below */
+
+/* Ensure footer sticks to bottom */
+html, body {
+  min-height: 100vh;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#contacto {
+  flex: 1;
+  padding: var(--spacing-xl) 0;
+}
+
+/* Improve contact page layout */
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: var(--bg-color);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.contact-item svg {
+  flex-shrink: 0;
+  color: var(--primary-color);
+  margin-top: 4px;
+}
+
+.contact-text h3 {
+  margin-bottom: var(--spacing-xs);
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.contact-text p {
+  color: var(--light-text);
+  margin: 0;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.social-link:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Page title styling */
+.page-title {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  font-size: 2.5rem;
+  color: var(--text-color);
+}
+
+/* Footer should stick to bottom */
+.footer {
+  margin-top: auto;
+}

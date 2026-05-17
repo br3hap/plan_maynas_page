@@ -1,3 +1,48 @@
 @import url('shared.css');
 
 /* Page-specific styles below */
+
+/* Dark mode overrides for PAT Maynas cards */
+.dark-mode #consulta-pat {
+  background: #2D2F3D;
+}
+
+.dark-mode .consulta-header {
+  background: #35374D;
+  border-radius: var(--border-radius);
+}
+
+.dark-mode .consulta-header .section-title {
+  color: #F0F0F5 !important;
+}
+
+.dark-mode .consulta-info {
+  color: #C8C8D0 !important;
+}
+
+.dark-mode .consulta-info h2 {
+  color: #F0F0F5 !important;
+}
+
+.dark-mode .consulta-detalles {
+  background: #2D2F3D;
+  border-radius: var(--border-radius);
+}
+
+.dark-mode .detalle-item {
+  background: #35374D;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.dark-mode .detalle-item strong {
+  color: #F0F0F5 !important;
+}
+
+.dark-mode .detalle-item p {
+  color: #C8C8D0 !important;
+}
+
+.dark-mode .mapa-imagen img {
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
