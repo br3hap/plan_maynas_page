@@ -3,7 +3,6 @@
 .muestra-div {
   background: #468AC4;
   padding: var(--spacing-xl);
-  border-radius: var(--border-radius-lg);
   box-shadow: 0 10px 30px var(--shadow-lg);
   margin-bottom: var(--spacing-xl);
   margin-left: calc(-50vw + 50%);
@@ -15,55 +14,56 @@
   border-radius: 0;
 }
 
-.dark-mode .muestra-div {
-  background: #3A7AA8;
-}
-
-.dark-mode .muestra-div p,
-.dark-mode .muestra-div h3 {
+#root .muestra-div p,
+#root .muestra-div h1,
+#root .muestra-div h2,
+#root .muestra-div h3,
+#root .muestra-div h4,
+#root .muestra-div li,
+#root .muestra-div strong {
   color: white !important;
 }
 
-.dark-mode .muestra-div .page-title {
+#root .muestra-div .section-title {
   color: white !important;
 }
 
-.dark-mode .muestra-div .section-title {
+#root .muestra-div .galeria-overlay h4,
+#root .muestra-div .galeria-overlay p {
   color: white !important;
 }
 
-.dark-mode .muestra-div .galeria-overlay h4,
-.dark-mode .muestra-div .galeria-overlay p {
+#root .muestra-div .video-info h3 {
   color: white !important;
 }
 
-.dark-mode .muestra-div .video-info h3 {
-  color: var(--primary-light) !important;
+#root .muestra-div .video-info p {
+  color: rgba(255, 255, 255, 0.85) !important;
 }
 
-.dark-mode .muestra-div .video-info p {
-  color: var(--light-text) !important;
-}
-
-.dark-mode .muestra-div .slider-btn {
+#root .muestra-div .slider-btn {
   background: rgba(255, 255, 255, 0.9);
   color: var(--secondary-color);
 }
 
-.dark-mode .muestra-div .slider-btn:hover {
+#root .muestra-div .slider-btn:hover {
   background: var(--primary-color);
   color: white;
 }
 
-.dark-mode .muestra-div .slider-dot {
+#root .muestra-div .slider-dot {
   background: rgba(255, 255, 255, 0.5);
-  border-color: var(--secondary-color);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
-.dark-mode .muestra-div .slider-dot.active {
-  background: var(--primary-color);
+#root .muestra-div .slider-dot.active {
+  background: white;
 }
 
-.dark-mode .muestra-div .slider-dot:hover {
-  background: var(--primary-light);
+#root .muestra-div .slider-dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+#root .muestra-div .text-muted {
+  color: rgba(255, 255, 255, 0.85) !important;
 }
