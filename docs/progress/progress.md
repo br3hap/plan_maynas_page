@@ -27,8 +27,16 @@
 - [x] Creado `.aliados-div` wrapper en el HTML
 - [x] Fondo blanco (`#FFFFFF`) siempre, no cambia con dark mode
 - [x] Texto (h1, p, h3, strong, li) forzado a oscuro (`#171b46`) en ambos modos
-- [x] Cards cambian con dark mode (背景色 follows `var(--bg-color)`)
+- [x] Cards cambian con dark mode (background follows `var(--bg-color)`)
 - [x] Títulos de cards (h3) forzados a blanco en dark mode para contraste
+
+### pat-maynas.html - Layout Grid Refactored
+- [x] Creado `.consulta-left` y `.consulta-right` wrappers para layout de 2 columnas
+- [x] Movidos items "Duración", "Cómo Participo", "Puntos Físicos", "Audiencias Descentralizadas", "Audiencia Metropolitana" a columna izquierda
+- [x] "Puntos Virtuales" + mapa se mantienen en columna derecha
+- [x] Removido wrapper `.consulta-detalles` (ya no necesario)
+- [x] CSS simplificado: flexbox column wrappers en lugar de grid placement con `grid-column`/`grid-row`
+- [x] Ver `docs/progress/GRID_ISSUE.md` para detalles completos
 
 ---
 
