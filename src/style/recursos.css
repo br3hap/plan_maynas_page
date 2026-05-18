@@ -1,3 +1,143 @@
 @import url('shared.css');
 
-/* Page-specific styles below */
+html, body {
+  min-height: 100vh;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#recursos {
+  flex: 1;
+  padding: var(--spacing-xl) 0;
+}
+
+.recursos-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.recurso-section {
+  background: var(--bg-color);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.recurso-section-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 1.25rem;
+  color: var(--text-color);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.recurso-section-title svg {
+  flex-shrink: 0;
+  color: var(--primary-color);
+}
+
+.recurso-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.recurso-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: var(--bg-alt);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.recurso-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px var(--shadow-color);
+}
+
+.recurso-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  color: white;
+}
+
+.recurso-content {
+  flex: 1;
+}
+
+.recurso-content h3 {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: var(--spacing-xs);
+}
+
+.recurso-content p {
+  color: var(--light-text);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.recurso-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: var(--primary-color);
+  color: white;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.recurso-link:hover {
+  background: var(--primary-dark);
+  transform: translateX(4px);
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  font-size: 2.5rem;
+  color: var(--text-color);
+}
+
+.footer {
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .recurso-section-title {
+    font-size: 1.1rem;
+  }
+
+  .recurso-item {
+    flex-direction: column;
+  }
+
+  .recurso-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
