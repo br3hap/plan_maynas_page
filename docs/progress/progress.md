@@ -30,6 +30,19 @@
 - [x] Cards cambian con dark mode (background follows `var(--bg-color)`)
 - [x] Títulos de cards (h3) forzados a blanco en dark mode para contraste
 
+### publicaciones.html - Header actualizado
+- [x] Estructura del header alineada al patrón estándar de `src/pages/` (mismo layout que contacto, aliados, etc.)
+- [x] Corrección del link activo en navegación
+
+### recursos.html - Refactorización Completa
+- [x] Estructura reestructurada con layout tipo card, basado en `contacto.html`
+- [x] Eliminados estilos inline (`style="color: #171b46;"`) — ahora usa CSS variables para dark mode
+- [x] Cards envueltas en `<a>` (toda la card es clickeable)
+- [x] Removidos botones de texto redundantes "Descargar el Documento"
+- [x] Icono de descarga es ahora el único CTA visual — escala y cambia de color en hover
+- [x] Cards sin descripción se centran verticalmente; cards con `<p>` se alinean arriba (`:has()` selector)
+- [x] `recursos.css` completado con: sticky footer, hover effects, responsive mobile
+
 ### pat-maynas.html - Layout Grid Refactored
 - [x] Creado `.consulta-left` y `.consulta-right` wrappers para layout de 2 columnas
 - [x] Movidos items "Duración", "Cómo Participo", "Puntos Físicos", "Audiencias Descentralizadas", "Audiencia Metropolitana" a columna izquierda
@@ -100,7 +113,7 @@ src/style/
 ├── pat-maynas.css  ← (vacío, placeholder)
 ├── pdm-iquitos.css ← (vacío, placeholder)
 ├── publicaciones.css ← (vacío, placeholder)
-└── recursos.css    ← (vacío, placeholder)
+└── recursos.css    ← estilos específicos de recursos.html (cards clickeables, sticky footer, hover effects)
 ```
 
 ---
