@@ -2774,23 +2774,6 @@ img {
 /* Planes Territoriales */
 /* .planes-territoriales moved to planes-territoriales.css */
 
-/* Instrumentos Pilares Wrapper */
-/* .instrumentos-pilares-wrapper moved to planes-territoriales.css */
-  background: #4888c8;
-  padding: var(--spacing-xl);
-  border-radius: var(--border-radius-lg);
-  /* border: 2px solid #0092FF; */
-  box-shadow: 0 10px 30px var(--shadow-lg);
-  margin-bottom: var(--spacing-xl);
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  padding-left: calc(50vw - 50%);
-  padding-right: calc(50vw - 50%);
-  border-left: none;
-  border-right: none;
-  border-radius: 0;
-}
-
 .equipo-div {
   background: #EC643B;
   padding: var(--spacing-xl);
