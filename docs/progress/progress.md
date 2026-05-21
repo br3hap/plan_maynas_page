@@ -22,13 +22,11 @@
 - [x] Texto (h1, p, h3) forzado a blanco en dark mode
 - [x] Cards no cambian (mantienen estilos de `shared.css`)
 
-### aliados.html
-- [x] Extraídos estilos de `shared.css` hacia `aliados.css`
-- [x] Creado `.aliados-div` wrapper en el HTML
-- [x] Fondo blanco (`#FFFFFF`) siempre, no cambia con dark mode
-- [x] Texto (h1, p, h3, strong, li) forzado a oscuro (`#171b46`) en ambos modos
-- [x] Cards cambian con dark mode (background follows `var(--bg-color)`)
-- [x] Títulos de cards (h3) forzados a blanco en dark mode para contraste
+### aliados.html → Integrado en planes-territoriales.html
+- [x] Contenido completo migrado a `planes-territoriales.html` (sección "Nuestros Aliados")
+- [x] CSS fusionado en `planes-territoriales.css`
+- [x] Página y CSS originales eliminados tras validación
+- [x] Historial preservado: `.aliados-div` con fondo blanco, texto oscuro forzado, grid de 16 aliados
 
 ### publicaciones.html - Header actualizado
 - [x] Estructura del header alineada al patrón estándar de `src/pages/` (mismo layout que contacto, aliados, etc.)
@@ -51,6 +49,13 @@
 - [x] CSS simplificado: flexbox column wrappers en lugar de grid placement con `grid-column`/`grid-row`
 - [x] Ver `docs/progress/GRID_ISSUE.md` para detalles completos
 
+### index.html - Cards Grid Centrado
+- [x] Grid cambiado de CSS Grid a Flexbox para centrar filas incompletas
+- [x] Máximo 5 cards por fila (`width: 220px`, `flex: 0 0 220px`)
+- [x] `justify-content: center` en `.projects-grid`
+- [x] Segunda fila (PDM Iquitos 2045, Consulta Pública, Muestra Virtual) ahora centrada
+- [x] Responsive mobile: cards vuelven a 100% de ancho
+
 ### index.html - Refactorización Total
 - [x] Removido código de secciones detalladas (ya existen en `src/pages/`)
 - [x] Conservado solo: header, hero, projects grid (simplificado a link-cards), footer
@@ -59,6 +64,20 @@
 - [x] Extraídos: `.hero`, `.reading-progress`, `.theme-toggle`, `.typing-text`, `.animate-fade-in`
 - [x] Actualizado `<head>` para cargar `src/style/shared.css` + `src/style/index.css`
 - [x] Eliminado `styles.css` (era ~90% duplicado de `shared.css`)
+
+### planes-territoriales.html - Unificación con Aliados
+- [x] Contenido completo de `aliados.html` integrado en `planes-territoriales.html`
+- [x] Sección "Nuestros Aliados" añadida tras "Planes Territoriales"
+- [x] CSS de `aliados.css` fusionado en `planes-territoriales.css`
+- [x] `.aliados-div` con fondo blanco y texto oscuro forzado
+- [x] Grid de aliados (`aliados-grid`) con 16 tarjetas preservado
+
+### Eliminación de Página Aliados (Integrada)
+- [x] Eliminado `src/pages/aliados.html`
+- [x] Eliminado `src/style/aliados.css`
+- [x] Eliminado enlace "NUESTROS ALIADOS" de todos los headers:
+  - `index.html`, `planes-territoriales.html`, `participamos.html`, `pdm-iquitos.html`,
+  - `pat-maynas.html`, `recursos.html`, `publicaciones.html`, `contacto.html`, `muestra-virtual.html`
 
 ### planes-territoriales.html - Actualización Header y Hitos
 - [x] Agregada sección `.hitos-del-proyecto` en CSS (`planes-territoriales.css`)
@@ -86,12 +105,12 @@
 
 ## Problemas Encontrados y Soluciones
 
-### allies.html - Especificidad de CSS con dark mode
+### aliados section (planes-territoriales) - Especificidad de CSS con dark mode
 **Problema:** El texto (p, strong, li) desaparecía en dark mode porque el color del texto coincidía con el fondo oscuro, a pesar de tener reglas `!important`.
 
 **Causa:** El tema dark mode se aplica via clase `.dark-mode` en `<body>`. Las reglas con `.aliados-div` (clase en un div) no tenían suficiente especificidad para override certain inherited styles.
 
-**Solución:** Se aumentó la especificidad usando `#root .aliados-div` en lugar de solo `.aliados-div`, y se incluyó `page-title`, `p`, `h3`, `strong` y `li` en las reglas de color oscuro.
+**Solución:** Se aumentó la especificidad usando `#root .aliados-div` en lugar de solo `.aliados-div`, y se incluyó `page-title`, `p`, `h3`, `strong` y `li` en las reglas de color oscuro. Esta solución se migró junto con el contenido a `planes-territoriales.css`.
 
 **Lección:** Cuando se usan `!important` y aún no funciona, verificar la especificidad real de los selectores. En este caso `body.dark-mode .aliados-div p` tiene mayor especificidad que `.aliados-div p`.
 
@@ -122,14 +141,15 @@ src/style/
 ├── index.css        ← estilos específicos de index.html (hero, popup, animaciones)
 ├── muestra-virtual.css ← estilos específicos de muestra-virtual.html
 ├── participamos.css ← estilos específicos de participamos.html
-├── aliados.css      ← estilos específicos de aliados.html
-├── planes-territoriales.css
+├── planes-territoriales.css ← estilos de planes-territoriales + aliados (unificado)
 ├── contacto.css     ← estilos específicos de contacto.html (footer sticky, cards, social links)
 ├── pat-maynas.css  ← (vacío, placeholder)
 ├── pdm-iquitos.css ← (vacío, placeholder)
 ├── publicaciones.css ← (vacío, placeholder)
 └── recursos.css    ← estilos específicos de recursos.html (cards clickeables, sticky footer, hover effects)
 ```
+
+> **Nota:** `aliados.css` fue eliminado. Sus estilos fueron fusionados en `planes-territoriales.css`.
 
 ---
 
