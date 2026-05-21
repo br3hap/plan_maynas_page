@@ -88,7 +88,7 @@
   align-items: center;
   position: relative;
   padding-top: var(--header-height);
-  background-image: url('src/docs/pruebafoto.png');
+  background-image: url('../docs/pruebafoto.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

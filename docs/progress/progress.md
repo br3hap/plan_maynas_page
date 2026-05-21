@@ -60,6 +60,21 @@
 - [x] Actualizado `<head>` para cargar `src/style/shared.css` + `src/style/index.css`
 - [x] Eliminado `styles.css` (era ~90% duplicado de `shared.css`)
 
+### planes-territoriales.html - Actualización Header y Hitos
+- [x] Agregada sección `.hitos-del-proyecto` en CSS (`planes-territoriales.css`)
+- [x] Fondo verde `#3DB877` para modo claro y oscuro
+- [x] Texto forzado a blanco en ambos modos
+- [x] Layout full-bleed (ancho completo) consistente con otras secciones
+- [x] Mejorado el header de navegación (ver abajo)
+
+### Header de Navegación - Mejora Visual
+- [x] Enlaces del menú ahora tienen efecto underline (línea inferior) en hover y estado activo
+- [x] Agregado `.menu li a` con padding, border-radius y estilos base
+- [x] Hover: solo cambia color de texto a verde y muestra underline (`::after`)
+- [x] Estado activo: color de texto verde, sin fondo ni borde adicional
+- [x] Línea inferior usa `::after` con ancho 80%, animada con transición
+- [x] Aplicado a `index.html` y todas las páginas en `src/pages/` (via `shared.css`)
+
 ### Fixes de Navegación y Layout (Mayo 2025)
 - [x] Corregidos links en `src/pages/*`: `index.html` → `../index.html` (evita directory listing)
 - [x] Corregido logo link en `src/pages/*`: `index.html#inicio` → `../index.html#inicio`
