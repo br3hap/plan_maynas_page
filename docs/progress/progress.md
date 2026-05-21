@@ -116,6 +116,15 @@
 
 ---
 
+### pmzm-iquitos.html - Nueva Página
+- [x] Creado `src/pages/pmzm-iquitos.html` con header y footer estándar
+- [x] Creado `src/style/pmzm-iquitos.css` con estilos específicos de "En Construcción"
+- [x] Contenido estilizado con colores del proyecto (#171b46, animaciones pulse y progress)
+- [x] Adaptado para dark mode (colores y fondos alternativos)
+- [x] Agregado link "PMZM IQUITOS" en el header de `index.html` y todas las páginas de `src/pages/`
+- [x] Clase `active` correctamente asignada en `pmzm-iquitos.html`
+- [x] Validación: 10 items de menú en todos los headers
+
 ## Pendiente
 
 ### muestra-virtual.html
@@ -145,6 +154,7 @@ src/style/
 ├── contacto.css     ← estilos específicos de contacto.html (footer sticky, cards, social links)
 ├── pat-maynas.css  ← (vacío, placeholder)
 ├── pdm-iquitos.css ← (vacío, placeholder)
+├── pmzm-iquitos.css ← estilos de "En Construcción" con animaciones pulse/progress, responsive y dark mode
 ├── publicaciones.css ← (vacío, placeholder)
 └── recursos.css    ← estilos específicos de recursos.html (cards clickeables, sticky footer, hover effects)
 ```

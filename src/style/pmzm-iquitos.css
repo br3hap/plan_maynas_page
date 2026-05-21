@@ -1,0 +1,158 @@
+@import url('shared.css');
+
+/* Page-specific styles for PMZM Iquitos - En Construcción */
+
+/* Sticky footer: push footer to bottom */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer {
+  margin-top: auto;
+}
+
+.construccion-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background-color: #f8f9fa;
+}
+
+.dark-mode .construccion-section {
+  background-color: #1a1a2e;
+}
+
+.construccion-container {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.construccion-icon {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 2rem;
+  color: #171b46;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.dark-mode .construccion-icon {
+  color: #4a90d9;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+.construccion-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #171b46;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.dark-mode .construccion-title {
+  color: #ffffff;
+}
+
+.construccion-subtitle {
+  font-size: 1.25rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.dark-mode .construccion-subtitle {
+  color: #cccccc;
+}
+
+.construccion-bar {
+  width: 100%;
+  max-width: 400px;
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  margin: 0 auto 2rem;
+  overflow: hidden;
+}
+
+.dark-mode .construccion-bar {
+  background-color: #333;
+}
+
+.construccion-bar-fill {
+  height: 100%;
+  width: 35%;
+  background-color: #171b46;
+  border-radius: 4px;
+  animation: progress 3s ease-in-out infinite;
+}
+
+.dark-mode .construccion-bar-fill {
+  background-color: #4a90d9;
+}
+
+@keyframes progress {
+  0%, 100% {
+    width: 35%;
+  }
+  50% {
+    width: 65%;
+  }
+}
+
+.construccion-message {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.8;
+}
+
+.dark-mode .construccion-message {
+  color: #aaa;
+}
+
+.construccion-message strong {
+  color: #171b46;
+}
+
+.dark-mode .construccion-message strong {
+  color: #4a90d9;
+}
+
+.construccion-back-link {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #171b46;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.construccion-back-link:hover {
+  background-color: #2a2f6e;
+}
+
+.dark-mode .construccion-back-link {
+  background-color: #4a90d9;
+  color: #ffffff;
+}
+
+.dark-mode .construccion-back-link:hover {
+  background-color: #6aa8e8;
+}
