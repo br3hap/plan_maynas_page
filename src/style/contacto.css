@@ -58,6 +58,16 @@ html, body {
   margin: 0;
 }
 
+.contact-address {
+  line-height: 1.7;
+  color: var(--light-text);
+}
+
+.contact-address strong {
+  color: var(--text-color);
+  font-size: 1.05rem;
+}
+
 .social-links {
   display: flex;
   align-items: center;
