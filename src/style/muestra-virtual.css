@@ -34,11 +34,11 @@
 }
 
 #root .muestra-div .video-info h3 {
-  color: white !important;
+  color: var(--text-color) !important;
 }
 
 #root .muestra-div .video-info p {
-  color: rgba(255, 255, 255, 0.85) !important;
+  color: var(--light-text) !important;
 }
 
 #root .muestra-div .slider-btn {

@@ -242,5 +242,69 @@
 
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script src="../../script.js"></script>
+    <script>
+      // Slider independiente para Muestra Virtual
+      document.addEventListener('DOMContentLoaded', function() {
+        const sliderTrack = document.getElementById('sliderTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const sliderDots = document.getElementById('sliderDots');
+
+        if (sliderTrack && prevBtn && nextBtn && sliderDots) {
+          const slides = sliderTrack.querySelectorAll('.slide');
+          const totalSlides = slides.length;
+          let currentSlide = 0;
+
+          // Crear dots
+          slides.forEach((_, index) => {
+            const dot = document.createElement('button');
+            dot.classList.add('slider-dot');
+            dot.setAttribute('aria-label', 'Ir a imagen ' + (index + 1));
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            sliderDots.appendChild(dot);
+          });
+
+          const dots = sliderDots.querySelectorAll('.slider-dot');
+
+          function updateSlider() {
+            sliderTrack.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+            dots.forEach((dot, index) => {
+              dot.classList.toggle('active', index === currentSlide);
+            });
+          }
+
+          function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+          }
+
+          function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+          }
+
+          function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+          }
+
+          nextBtn.addEventListener('click', nextSlide);
+          prevBtn.addEventListener('click', prevSlide);
+
+          // Avanzar al hacer clic en la imagen
+          slides.forEach((slide) => {
+            slide.style.cursor = 'pointer';
+            slide.addEventListener('click', nextSlide);
+          });
+
+          // Navegación con teclado
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevSlide();
+            else if (e.key === 'ArrowRight') nextSlide();
+          });
+        }
+      });
+    </script>
   </body>
 </html>
