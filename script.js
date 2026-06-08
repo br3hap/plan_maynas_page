@@ -431,6 +431,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const publicacionesGrid = document.getElementById('publicacionesGrid');
   const searchInput = document.getElementById('searchPublicaciones');
   const categoryButtons = document.querySelectorAll('.filter-publicacion');
+  const resultCount = document.getElementById('resultCount');
   const resultList = document.getElementById('resultList');
   const modal = document.getElementById('publicacionModal');
   const modalTitle = document.getElementById('modalTitle');
