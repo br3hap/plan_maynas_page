@@ -1,15 +1,14 @@
 ---
 name: plan-maynas-vps-upload
-description: Ayuda para subir archivos al VPS de Plan Maynas. Comandos útiles para scp, permisos y conexión SSH.
+description: Subir archivos al VPS de Plan Maynas. Comandos listos para copiar y ejecutar.
 ---
 
 ## When to Use This Skill
 
 Activar esta skill cuando el usuario necesite:
-- Subir imágenes al VPS
-- Actualizar archivos HTML en el VPS
-- Problemas de permisos SSH/scp
-- Comandos de conexión al servidor
+- Subir archivos (PDFs, imágenes, HTML) al VPS
+- Corregir permisos en el VPS
+- Conectar por SSH al servidor
 
 ## Datos del VPS
 
@@ -21,60 +20,89 @@ Activar esta skill cuando el usuario necesite:
 | Ruta base | `/home/munimaynas/planmaynas2.munimaynas.gob.pe/` |
 | Llave SSH | `/home/mauri12/.ssh/Credenciales-Aplicaciones-Nueva.pem` |
 
-## Conexión SSH
+## Comandos rápidos
 
+> **IMPORTANTE**: El VPS solo acepta login SSH con usuario `ubuntu`. El `scp` debe hacerse con `ubuntu`, y luego mover el archivo con `sudo`.
+
+### Conexión SSH
 ```bash
 ssh -i /home/mauri12/.ssh/Credenciales-Aplicaciones-Nueva.pem ubuntu@100.58.2.135
 ```
 
-## Subir archivos con scp
-
-### Subir imagen al VPS
+### Subir PDF a src/docs/pdf/
 ```bash
-scp -i /home/mauri12/.ssh/Credenciales-Aplicaciones-Nueva.pem /home/mauri12/projects/plan_maynas_page/src/docs/img/actualizaciones/img_NN.jpg munimaynas@100.58.2.135:/home/munimaynas/planmaynas2.munimaynas.gob.pe/src/docs/img/actualizaciones/
+# Paso 1: subir a /tmp/
+scp -i /home/mauri12/.ssh/Credenciales-Aplicaciones-Nueva.pem "/home/mauri12/projects/plan_maynas_page/src/docs/pdf/ARCHIVO.pdf" ubuntu@100.58.2.135:/tmp/
+
+# Paso 2: mover a destino final + permisos (en una sola línea)
+ssh -i /home/mauri12/.ssh/Credenciales-Aplicaciones-Nueva.pem ubuntu@100.58.2.135 "sudo cp '/tmp/ARCHIVO.pdf' /home/munimaynas/planmaynas2.munimaynas.gob.pe/src/docs/pdf/ && sudo chown munimaynas:munimaynas '/home/munimaynas/planmaynas2.munimaynas.gob.pe/src/docs/pdf/ARCHIVO.pdf' && sudo chmod 644 '/home/munimaynas/planmaynas2.munimaynas.gob.pe/src/docs/pdf/ARCHIVO.pdf' && rm '/tmp/ARCHIVO.pdf'"
 ```
 
-### Subir archivo HTML
+### Subir imagen a src/docs/img/
 ```bash
-scp -i /home/mauri12/.ssh/Credenciales-Aplicaciones-Nueva.pem /home/mauri12/projects/plan_maynas_page/src/pages/publicaciones.html munimaynas@100.58.2.135:/home/munimaynas/planmaynas2.munimaynas.gob.pe/src/pages/
+scp -i /home/mauri12/.ssh/Credenciales-Aplicaciones-Nueva.pem "/home/mauri12/projects/plan_maynas_page/src/docs/img/ARCHIVO.jpg" ubuntu@100.58.2.135:/tmp/
+
+ssh -i /home/mauri12/.ssh/Credenciales-Aplicaciones-Nueva.pem ubuntu@100.58.2.135 "sudo cp '/tmp/ARCHIVO.jpg' /home/munimaynas/planmaynas2.munimaynas.gob.pe/src/docs/img/ && sudo chown munimaynas:munimaynas '/home/munimaynas/planmaynas2.munimaynas.gob.pe/src/docs/img/ARCHIVO.jpg' && sudo chmod 644 '/home/munimaynas/planmaynas2.munimaynas.gob.pe/src/docs/img/ARCHIVO.jpg' && rm '/tmp/ARCHIVO.jpg'"
 ```
 
-## Problemas de permisos
-
-### Si "Permission denied" al subir
-Desde el VPS, cambiar propietario de la carpeta:
+### Subir página HTML
 ```bash
-sudo chown ubuntu:ubuntu /home/munimaynas/planmaynas2.munimaynas.gob.pe/src/docs/img/actualizaciones/
-sudo chown ubuntu:ubuntu /home/munimaynas/planmaynas2.munimaynas.gob.pe/src/pages/
+scp -i /home/mauri12/.ssh/Credenciales-Aplicaciones-Nueva.pem "/home/mauri12/projects/plan_maynas_page/src/pages/PAGINA.html" ubuntu@100.58.2.135:/tmp/
+
+ssh -i /home/mauri12/.ssh/Credenciales-Aplicaciones-Nueva.pem ubuntu@100.58.2.135 "sudo cp '/tmp/PAGINA.html' /home/munimaynas/planmaynas2.munimaynas.gob.pe/src/pages/ && sudo chown munimaynas:munimaynas '/home/munimaynas/planmaynas2.munimaynas.gob.pe/src/pages/PAGINA.html' && sudo chmod 644 '/home/munimaynas/planmaynas2.munimaynas.gob.pe/src/pages/PAGINA.html' && rm '/tmp/PAGINA.html'"
 ```
 
-### Dar permisos de escritura
+### Subir recurso (CSS, script, etc.)
 ```bash
-sudo chmod 755 /home/munimaynas/planmaynas2.munimaynas.gob.pe/src/docs/img/actualizaciones/
+scp -i /home/mauri12/.ssh/Credenciales-Aplicaciones-Nueva.pem "/home/mauri12/projects/plan_maynas_page/src/DESTINO/ARCHIVO" ubuntu@100.58.2.135:/tmp/
+
+ssh -i /home/mauri12/.ssh/Credenciales-Aplicaciones-Nueva.pem ubuntu@100.58.2.135 "sudo cp '/tmp/ARCHIVO' /home/munimaynas/planmaynas2.munimaynas.gob.pe/src/DESTINO/ && sudo chown munimaynas:munimaynas '/home/munimaynas/planmaynas2.munimaynas.gob.pe/src/DESTINO/ARCHIVO' && sudo chmod 644 '/home/munimaynas/planmaynas2.munimaynas.gob.pe/src/DESTINO/ARCHIVO' && rm '/tmp/ARCHIVO'"
 ```
 
-## Rutas de archivos en VPS
+## Fix permisos (ejecutar en VPS vía SSH)
 
-| Archivo | Ruta en VPS |
-|---------|-------------|
-| Imágenes actualizaciones | `/home/munimaynas/planmaynas2.munimaynas.gob.pe/src/docs/img/actualizaciones/` |
-| Publicaciones HTML | `/home/munimaynas/planmaynas2.munimaynas.gob.pe/src/pages/publicaciones.html` |
-
-## Editar archivo en VPS con nano
+Si da "Permission denied" al subir:
 
 ```bash
-sudo nano /home/munimaynas/planmaynas2.munimaynas.gob.pe/src/pages/publicaciones.html
+# PDFs
+sudo chown -R munimaynas:munimaynas /home/munimaynas/planmaynas2.munimaynas.gob.pe/src/docs/pdf/ && sudo chmod 755 /home/munimaynas/planmaynas2.munimaynas.gob.pe/src/docs/pdf/
+
+# Imágenes
+sudo chown -R munimaynas:munimaynas /home/munimaynas/planmaynas2.munimaynas.gob.pe/src/docs/img/ && sudo chmod 755 /home/munimaynas/planmaynas2.munimaynas.gob.pe/src/docs/img/
+
+# Páginas
+sudo chown -R munimaynas:munimaynas /home/munimaynas/planmaynas2.munimaynas.gob.pe/src/pages/ && sudo chmod 755 /home/munimaynas/planmaynas2.munimaynas.gob.pe/src/pages/
+
+# Estilos
+sudo chown -R munimaynas:munimaynas /home/munimaynas/planmaynas2.munimaynas.gob.pe/src/style/ && sudo chmod 755 /home/munimaynas/planmaynas2.munimaynas.gob.pe/src/style/
 ```
 
-## Workflow para nueva publicación
+## Rutas en VPS
 
-1. **Agregar publicación** en `src/pages/publicaciones.html` local (ya hecho)
-2. **Subir imagen** con scp a la carpeta de actualizaciones
-3. **Subir publicaciones.html** al VPS
-4. Si hay error de permisos, ejecutar `chown` en el VPS y reintentar
+| Tipo | Ruta destino |
+|------|-------------|
+| PDFs | `/home/munimaynas/planmaynas2.munimaynas.gob.pe/src/docs/pdf/` |
+| Imágenes | `/home/munimaynas/planmaynas2.munimaynas.gob.pe/src/docs/img/` |
+| Actualizaciones | `/home/munimaynas/planmaynas2.munimaynas.gob.pe/src/docs/img/actualizaciones/` |
+| Páginas HTML | `/home/munimaynas/planmaynas2.munimaynas.gob.pe/src/pages/` |
+| Estilos CSS | `/home/munimaynas/planmaynas2.munimaynas.gob.pe/src/style/` |
+
+## Workflow subida completa (ejemplo: nuevo PDF)
+
+```bash
+# 1. Subir el PDF
+scp -i /home/mauri12/.ssh/Credenciales-Aplicaciones-Nueva.pem "/home/mauri12/projects/plan_maynas_page/src/docs/pdf/NUEVO.pdf" munimaynas@100.58.2.135:/home/munimaynas/planmaynas2.munimaynas.gob.pe/src/docs/pdf/
+
+# 2. Si falla permisos, fix en VPS
+ssh -i /home/mauri12/.ssh/Credenciales-Aplicaciones-Nueva.pem ubuntu@100.58.2.135 "sudo chown -R munimaynas:munimaynas /home/munimaynas/planmaynas2.munimaynas.gob.pe/src/docs/pdf/ && sudo chmod 755 /home/munimaynas/planmaynas2.munimaynas.gob.pe/src/docs/pdf/"
+
+# 3. Reintentar subida
+scp -i /home/mauri12/.ssh/Credenciales-Aplicaciones-Nueva.pem "/home/mauri12/projects/plan_maynas_page/src/docs/pdf/NUEVO.pdf" munimaynas@100.58.2.135:/home/munimaynas/planmaynas2.munimaynas.gob.pe/src/docs/pdf/
+```
 
 ## Notas
 
 - El usuario `munimaynas` es el propietario de los archivos web
 - El usuario `ubuntu` tiene permisos sudo
 - Siempre usar la llave `.pem` con `-i` en scp
+- Poner siempre las rutas entre comillas dobles `"` para manejar espacios en nombres
