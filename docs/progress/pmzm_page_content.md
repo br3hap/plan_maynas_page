@@ -18,6 +18,7 @@ Segunda imagen
 ## ¿Sabes si estás en la Zona Monumental?
 Averigualo en este mapa
 (Añadir una forma de hacerle zoom a la imagen) 
+Tercera imagen
 /home/mauri12/projects/plan_maynas_page/src/docs/img/pmzm/FINAL_Mapa_Diptico.png
 
 ## Consulta Pública del PMZM de Iquitos
