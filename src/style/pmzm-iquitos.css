@@ -1,6 +1,20 @@
 @import url('shared.css');
 
-/* Page-specific styles for PMZM Iquitos - En Construcción */
+/* Page-specific styles for PMZM Iquitos */
+
+/* Justify all paragraphs on this page */
+#root p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Keep UI hints centered */
+.galeria-overlay p,
+.pmzm-mapa-hint,
+.pmzm-zoom-hint,
+#pmzm-zoom-percent {
+  text-align: center;
+}
 
 /* Sticky footer: push footer to bottom */
 #root {
@@ -13,146 +27,304 @@
   margin-top: auto;
 }
 
-.construccion-section {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
-  background-color: #f8f9fa;
+/* Block 1: Hero (full-bleed beige band, PDM pattern) */
+#inicio {
+  padding-top: calc(var(--header-height) + var(--spacing-xl));
 }
 
-.dark-mode .construccion-section {
-  background-color: #1a1a2e;
+.pmzm-hero {
+  background: #E5D3C1;
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
 }
 
-.construccion-container {
+.pmzm-hero .container {
   text-align: center;
-  max-width: 800px;
+}
+
+.pmzm-hero-title {
+  color: #171b46;
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-lg);
+}
+
+.pmzm-hero p {
+  color: #171b46;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto var(--spacing-md);
+}
+
+/* Blocks 3 y 4: Figuras a pantalla completa con lightbox existente */
+.pmzm-figura {
+  margin: var(--spacing-xl) 0 0;
+}
+
+.pmzm-figura img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.pmzm-figura:hover img {
+  transform: none;
+}
+
+/* Cronograma: compact so title + full image fit in viewport */
+#cronograma-pmzm .pmzm-figura {
+  max-width: 680px;
+  margin: var(--spacing-md) auto 0;
+}
+
+#cronograma-pmzm .pmzm-figura img {
+  width: auto;
+  max-width: 100%;
+  max-height: 62vh;
   margin: 0 auto;
 }
 
-.construccion-icon {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 2rem;
-  color: #171b46;
-  animation: pulse 2s ease-in-out infinite;
-}
-
-.dark-mode .construccion-icon {
-  color: #4a90d9;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.8;
-  }
-}
-
-.construccion-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #171b46;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.dark-mode .construccion-title {
-  color: #ffffff;
-}
-
-.construccion-subtitle {
-  font-size: 1.25rem;
-  color: #555;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-}
-
-.dark-mode .construccion-subtitle {
-  color: #cccccc;
-}
-
-.construccion-bar {
-  width: 100%;
-  max-width: 400px;
-  height: 8px;
-  background-color: #e0e0e0;
-  border-radius: 4px;
-  margin: 0 auto 2rem;
+/* Block 5: Mapa de la Zona Monumental (preview + modal zoom) */
+.pmzm-mapa-figura {
+  margin: var(--spacing-md) auto 0;
+  max-width: 680px;
+  position: relative;
   overflow: hidden;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 20px var(--shadow-color);
+  cursor: zoom-in;
+  transition: var(--transition);
 }
 
-.dark-mode .construccion-bar {
-  background-color: #333;
+.pmzm-mapa-figura:hover {
+  box-shadow: 0 15px 40px var(--shadow-lg);
 }
 
-.construccion-bar-fill {
+.pmzm-mapa-figura img {
+  width: 100%;
+  height: auto;
+  max-height: 62vh;
+  object-fit: contain;
+  display: block;
+}
+
+.pmzm-mapa-hint {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  padding: var(--spacing-md);
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 0.95rem;
+}
+
+/* Modal de zoom del mapa */
+.pmzm-zoom-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 10001;
+  background: rgba(0, 0, 0, 0.92);
+  flex-direction: column;
+}
+
+.pmzm-zoom-modal.open {
+  display: flex;
+}
+
+.pmzm-zoom-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: #1c1e2b;
+  color: #ffffff;
+  z-index: 1;
+}
+
+.pmzm-zoom-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pmzm-zoom-toolbar button {
+  min-width: 36px;
+  height: 36px;
+  padding: 0 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  color: #ffffff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: var(--transition);
+}
+
+.pmzm-zoom-toolbar button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+#pmzm-zoom-percent {
+  min-width: 52px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  color: #ffffff;
+}
+
+.pmzm-zoom-close {
+  font-size: 1.4rem;
+}
+
+.pmzm-zoom-viewport {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  cursor: grab;
+  touch-action: none;
+}
+
+.pmzm-zoom-viewport.dragging {
+  cursor: grabbing;
+}
+
+.pmzm-zoom-viewport img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: none;
+  max-height: none;
+  opacity: 0;
+  transform-origin: 0 0;
+  will-change: transform;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.pmzm-zoom-hint {
+  text-align: center;
+  padding: var(--spacing-sm);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.85rem;
+  background: #1c1e2b;
+}
+
+/* Block 6: Consulta Pública (estilo PAT Maynas) */
+#consulta-pmzm .consulta-equilibrada {
+  align-items: stretch;
+}
+
+#consulta-pmzm .consulta-equilibrada .consulta-left {
+  justify-content: center;
+}
+
+.consulta-right .consulta-foto {
+  margin: 0;
+  width: 100%;
   height: 100%;
-  width: 35%;
-  background-color: #171b46;
-  border-radius: 4px;
-  animation: progress 3s ease-in-out infinite;
+  min-height: 320px;
 }
 
-.dark-mode .construccion-bar-fill {
-  background-color: #4a90d9;
+.consulta-right .consulta-foto img {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px var(--shadow-color);
+  display: block;
 }
 
-@keyframes progress {
-  0%, 100% {
-    width: 35%;
-  }
-  50% {
-    width: 65%;
-  }
+#consulta-pmzm .detalle-item .detalle-sub {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 8px 0 0;
 }
 
-.construccion-message {
-  font-size: 1rem;
-  color: #666;
-  line-height: 1.8;
+#consulta-pmzm .detalle-item .detalle-sub svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--primary-color);
 }
 
-.dark-mode .construccion-message {
-  color: #aaa;
+#consulta-pmzm .detalle-item .detalle-sub strong {
+  display: inline;
+  margin: 0;
 }
 
-.construccion-message strong {
+#consulta-pmzm .detalle-fecha > svg {
+  width: 36px;
+  height: 36px;
+  margin-top: 0;
+}
+#consulta-pmzm {
+  background: #ffffff;
+}
+
+.participa-title {
+  text-align: center;
+  font-size: 1.8rem;
   color: #171b46;
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
 }
 
-.dark-mode .construccion-message strong {
-  color: #4a90d9;
+/* Dark mode: espejo de pat-maynas.css */
+.dark-mode #consulta-pmzm {
+  background: #2D2F3D;
 }
 
-.construccion-back-link {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 0.75rem 1.5rem;
-  background-color: #171b46;
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
+.dark-mode #consulta-pmzm .consulta-header {
+  background: transparent;
 }
 
-.construccion-back-link:hover {
-  background-color: #2a2f6e;
+.dark-mode #consulta-pmzm .consulta-header .section-title {
+  color: #F0F0F5 !important;
 }
 
-.dark-mode .construccion-back-link {
-  background-color: #4a90d9;
-  color: #ffffff;
+.dark-mode #consulta-pmzm .consulta-info {
+  color: #C8C8D0 !important;
 }
 
-.dark-mode .construccion-back-link:hover {
-  background-color: #6aa8e8;
+.dark-mode #consulta-pmzm .consulta-info h2 {
+  color: #F0F0F5 !important;
+}
+
+.dark-mode #consulta-pmzm .detalle-item {
+  background: #35374D;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.dark-mode #consulta-pmzm .detalle-item strong {
+  color: #F0F0F5 !important;
+}
+
+.dark-mode #consulta-pmzm .detalle-item p {
+  color: #C8C8D0 !important;
+}
+
+.dark-mode #consulta-pmzm .participa-title {
+  color: #F0F0F5 !important;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .pmzm-hero-title {
+    font-size: 2rem;
+  }
+
+  .pmzm-hero p {
+    font-size: 1rem;
+  }
 }

@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PMZM Iquitos - Plan Maynas</title>
-    <link rel="icon" href="src/docs/img.png" type="image/png">
+    <link rel="icon" href="../docs/img.png" type="image/png">
     <link rel="stylesheet" href="../style/pmzm-iquitos.css" />
-    <meta name="description" content="Plan Maestro de la Zona Monumental de Iquitos al 2045 - En construcción." />
+    <meta name="description" content="Plan Maestro de la Zona Monumental de Iquitos al 2045 - Hoja de ruta para poner en valor el patrimonio histórico y orientar el desarrollo ordenado de la Zona Monumental." />
     <meta name="author" content="Breithner Aquituari" />
   </head>
 
@@ -25,7 +25,7 @@
       <header class="header">
         <div class="container">
           <div class="logo">
-            <a href="../index.html#inicio">
+            <a href="../../index.html#inicio">
               <img src="../docs/logo-plan.png" alt="Plan Maynas Logo" style="width: 250px"/>
             </a>
           </div>
@@ -51,30 +51,144 @@
         </div>
       </header>
 
-      <section class="construccion-section">
-        <div class="construccion-container">
-          <div class="construccion-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <!-- Cabeza del martillo -->
-              <path d="M2 5h20v6H2z"/>
-              <!-- Garfio del martillo -->
-              <path d="M2 8C-1 8-2 10-2 13"/>
-              <!-- Mango del martillo -->
-              <rect x="10" y="11" width="4" height="13" rx="1"/>
-            </svg>
+      <section id="inicio" aria-label="Presentación">
+        <div class="pmzm-hero">
+          <div class="container">
+            <h1 class="pmzm-hero-title">Plan Maestro de la Zona Monumental de Iquitos</h1>
+            <p>Es la hoja de ruta para el tratamiento especial de la Zona Monumental de Iquitos, a fin de poner en valor el patrimonio histórico y, al mismo tiempo, orientar el desarrollo de esa área de forma ordenada.</p>
+            <p>Busca equilibrar la conservación del patrimonio con el desarrollo urbano, garantizando que la zona monumental mantenga su identidad histórica y continúe siendo un espacio funcional y atractivo para las generaciones presentes y futuras.</p>
           </div>
-          <h1 class="construccion-title">En Construcción</h1>
-          <p class="construccion-subtitle">
-            Estamos trabajando en el contenido del Plan Maestro de la Zona Monumental de Iquitos al 2045 (PMZM Iquitos).
-          </p>
-          <div class="construccion-bar">
-            <div class="construccion-bar-fill"></div>
+        </div>
+      </section>
+
+      <section id="que-define" class="section">
+        <div class="container">
+          <h2 class="section-title">¿Qué define el PMZM?</h2>
+          <p class="section-description">El PMZM define cómo se protegerá nuestro patrimonio histórico y se integrará al desarrollo de la ciudad. Establecerá cómo organizar, zonificar y regular este espacio único, asegurando su conservación mientras se impulsa su proyección de manera ordenada y respetuosa de su valor histórico y cultural.</p>
+        </div>
+      </section>
+
+      <section id="que-conforma" class="section bg-alt">
+        <div class="container">
+          <h2 class="section-title">¿Qué conforma la Zona Monumental?</h2>
+          <figure class="galeria-item pmzm-figura">
+            <img src="../docs/img/pmzm/1pmzm.png" alt="Mapa de la Zona Monumental de Iquitos" loading="lazy" />
+            <div class="galeria-overlay">
+              <p>Haz clic para ampliar</p>
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <section id="que-regula" class="section">
+        <div class="container">
+          <h2 class="section-title">¿Qué regula la Zona Monumental?</h2>
+          <figure class="galeria-item pmzm-figura">
+            <img src="../docs/img/pmzm/2_que-regula-y-propone-el-PMZM2.png" alt="Usos y regulaciones que propone la Zona Monumental de Iquitos" loading="lazy" />
+            <div class="galeria-overlay">
+              <p>Haz clic para ampliar</p>
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <section id="cronograma-pmzm" class="section">
+        <div class="container">
+          <h2 class="section-title">CRONOGRAMA 2026 DE CONSTRUCCIÓN DEL PLAN MAESTRO</h2>
+          <figure class="galeria-item pmzm-figura">
+            <img src="../docs/img/pmzm/cronograma-2026-construccion-plan-maestro.png" alt="Cronograma 2026 de construcción del Plan Maestro: Inicio en mayo, Diagnóstico junio-julio, Propuestas agosto-setiembre, Consulta Pública octubre-noviembre" loading="lazy" />
+            <div class="galeria-overlay">
+              <p>Haz clic para ampliar</p>
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <section id="zona-monumental" class="section bg-alt">
+        <div class="container">
+          <h2 class="section-title">¿Sabes si estás en la Zona Monumental?</h2>
+          <p class="section-description">Averígualo en este mapa. Haz clic sobre la imagen para abrirla en tamaño completo y explorarla con zoom.</p>
+          <figure class="pmzm-mapa-figura" id="pmzm-mapa-open" role="button" tabindex="0" aria-label="Abrir el mapa de la Zona Monumental en tamaño completo">
+            <img src="../docs/img/pmzm/FINAL_Mapa_Diptico_preview.webp" alt="Mapa de la Zona Monumental de Iquitos — haz clic para ampliar" loading="lazy" />
+            <figcaption class="pmzm-mapa-hint">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+              Haz clic para ampliar el mapa
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="consulta-pmzm" class="section">
+        <div class="container">
+          <div class="consulta-header">
+            <h2 class="section-title" style="color: #171b46;">CONSULTA PÚBLICA DEL PMZM DE IQUITOS</h2>
           </div>
-          <p class="construccion-message">
-            <strong>Pronto encontrarás aquí toda la información.</strong><br/>
-            Mientras tanto, te invitamos a explorar los avances del <a href="pdm-iquitos.html">PDM Iquitos</a> y del <a href="pat-maynas.html">PAT Maynas</a>, o a regresar a la <a href="planes-territoriales.html">página de Planes Territoriales</a>.
-          </p>
-          <a href="planes-territoriales.html" class="construccion-back-link">← Volver a Planes Territoriales</a>
+          <div class="consulta-content consulta-equilibrada">
+            <div class="consulta-left">
+              <div class="consulta-info" style="color: #171b46;">
+                <h2>¿Qué es la Consulta Pública del PMZM de Iquitos?</h2>
+                Es un periodo de participación ciudadana que dura 30 días, en el marco de la Ley de Desarrollo Urbano Sostenible N° 31313 y su reglamento D.S. N° 012-2022-Vivienda, donde podrás aportar con tus comentarios sobre la propuesta del PMZM de Iquitos.
+              </div>
+              <div class="detalle-item detalle-fecha">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <div>
+                  <strong>¿Cuándo es la Consulta Pública?</strong>
+                  <p>Del 15 de octubre al 15 de noviembre del 2026</p>
+                </div>
+              </div>
+            </div>
+            <div class="consulta-right">
+              <figure class="consulta-imagen consulta-foto">
+                <img src="../docs/img/consulta_publica/img_1.JPG" alt="Taller participativo del Plan Maynas con vecinos aportando sobre mapas" loading="lazy" />
+              </figure>
+            </div>
+          </div>
+          <h3 class="participa-title">¿Cómo Puedo Participar?</h3>
+          <div class="planes-grid">
+            <div class="plan-card">
+              <div class="plan-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <h3>Sala Abierta Ciudadana</h3>
+              <p>Espacios presenciales de diálogo donde podrás conocer la propuesta del PMZM y aportar tus comentarios sobre el futuro de la Zona Monumental.</p>
+            </div>
+            <div class="plan-card">
+              <div class="plan-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <h3>Puntos físicos de Consulta Pública</h3>
+              <p>Acércate a los puntos de atención habilitados para dejar tus aportes y observaciones por escrito durante el periodo de consulta.</p>
+            </div>
+            <div class="plan-card">
+              <div class="plan-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <h3>Plataforma digital para aportes</h3>
+              <p>Ingresa desde cualquier dispositivo a nuestra plataforma en línea para enviar tus comentarios y aportes de forma remota.</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -100,7 +214,205 @@
       </footer>
     </div>
 
+    <div id="pmzm-zoom-modal" class="pmzm-zoom-modal" role="dialog" aria-modal="true" aria-label="Mapa de la Zona Monumental de Iquitos" aria-hidden="true">
+      <div class="pmzm-zoom-toolbar">
+        <div class="pmzm-zoom-controls">
+          <button type="button" id="pmzm-zoom-out" aria-label="Alejar">−</button>
+          <span id="pmzm-zoom-percent" aria-live="polite">100%</span>
+          <button type="button" id="pmzm-zoom-in" aria-label="Acercar">+</button>
+          <button type="button" id="pmzm-zoom-reset" aria-label="Restablecer el zoom">Reset</button>
+        </div>
+        <button type="button" id="pmzm-zoom-close" class="pmzm-zoom-close" aria-label="Cerrar">×</button>
+      </div>
+      <div class="pmzm-zoom-viewport" id="pmzm-zoom-viewport">
+        <img id="pmzm-zoom-img" data-src="../docs/img/pmzm/FINAL_Mapa_Diptico.png" alt="Mapa de la Zona Monumental de Iquitos en alta resolución" draggable="false" />
+      </div>
+      <p class="pmzm-zoom-hint">Rueda para acercar o alejar · Arrastra para desplazarte · Doble clic para acercar · Esc para cerrar</p>
+    </div>
+
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script src="../../script.js"></script>
+    <script>
+      // Zoom del mapa de la Zona Monumental (independiente para PMZM)
+      document.addEventListener('DOMContentLoaded', function() {
+        var modal = document.getElementById('pmzm-zoom-modal');
+        var viewport = document.getElementById('pmzm-zoom-viewport');
+        var img = document.getElementById('pmzm-zoom-img');
+        var openBtn = document.getElementById('pmzm-mapa-open');
+        var closeBtn = document.getElementById('pmzm-zoom-close');
+        var zoomIn = document.getElementById('pmzm-zoom-in');
+        var zoomOut = document.getElementById('pmzm-zoom-out');
+        var zoomReset = document.getElementById('pmzm-zoom-reset');
+        var percentEl = document.getElementById('pmzm-zoom-percent');
+
+        if (!modal || !viewport || !img || !openBtn) return;
+
+        var scale = 1, tx = 0, ty = 0;
+        var baseScale = 1, baseW = 0, baseH = 0;
+        var isOpen = false, dragging = false;
+        var pointers = new Map();
+
+        var MIN_SCALE = 0.5, MAX_SCALE = 8;
+
+        function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
+
+        function init() {
+          var r = viewport.getBoundingClientRect();
+          baseScale = Math.min(r.width / img.naturalWidth, r.height / img.naturalHeight);
+          baseW = img.naturalWidth * baseScale;
+          baseH = img.naturalHeight * baseScale;
+        }
+
+        function clampPan() {
+          var vw = viewport.clientWidth, vh = viewport.clientHeight;
+          var sw = baseW * scale, sh = baseH * scale;
+          if (sw <= vw) { tx = (vw - sw) / 2; } else { tx = clamp(tx, vw - sw, 0); }
+          if (sh <= vh) { ty = (vh - sh) / 2; } else { ty = clamp(ty, vh - sh, 0); }
+        }
+
+        function render() {
+          img.style.transform = 'translate(' + tx + 'px, ' + ty + 'px) scale(' + (baseScale * scale) + ')';
+          img.style.opacity = '1';
+          percentEl.textContent = Math.round(scale * 100) + '%';
+        }
+
+        function reset() {
+          scale = 1; tx = 0; ty = 0;
+          clampPan();
+          render();
+        }
+
+        function zoomAt(cx, cy, factor) {
+          var newScale = clamp(scale * factor, MIN_SCALE, MAX_SCALE);
+          var ax = (baseW * newScale > viewport.clientWidth) ? cx : viewport.clientWidth / 2;
+          var ay = (baseH * newScale > viewport.clientHeight) ? cy : viewport.clientHeight / 2;
+          tx = ax - (ax - tx) * (newScale / scale);
+          ty = ay - (ay - ty) * (newScale / scale);
+          scale = newScale;
+          clampPan();
+          render();
+        }
+
+        function openModal() {
+          if (isOpen) return;
+          isOpen = true;
+          modal.classList.add('open');
+          modal.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+          if (!img.getAttribute('src')) {
+            img.setAttribute('src', img.getAttribute('data-src'));
+            img.addEventListener('load', function() { init(); reset(); });
+          } else {
+            init(); reset();
+          }
+        }
+
+        function closeModal() {
+          if (!isOpen) return;
+          isOpen = false;
+          modal.classList.remove('open');
+          modal.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+          openBtn.focus();
+        }
+
+        openBtn.addEventListener('click', openModal);
+        openBtn.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(); }
+        });
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', function(e) {
+          if (e.target === modal) closeModal();
+        });
+
+        zoomIn.addEventListener('click', function() {
+          zoomAt(viewport.clientWidth / 2, viewport.clientHeight / 2, 1.4);
+        });
+        zoomOut.addEventListener('click', function() {
+          zoomAt(viewport.clientWidth / 2, viewport.clientHeight / 2, 1 / 1.4);
+        });
+        zoomReset.addEventListener('click', reset);
+
+        viewport.addEventListener('wheel', function(e) {
+          e.preventDefault();
+          // e.ctrlKey = pinch del trackpad de laptop; deltaMode 1 = líneas (Firefox)
+          var gain = e.ctrlKey ? 0.008 : (e.deltaMode === 1 ? 0.05 : 0.0025);
+          var r = viewport.getBoundingClientRect();
+          zoomAt(e.clientX - r.left, e.clientY - r.top, Math.exp(-e.deltaY * gain));
+        }, { passive: false });
+
+        var lastX = 0, lastY = 0, pinchDist = 0;
+
+        viewport.addEventListener('pointerdown', function(e) {
+          viewport.setPointerCapture(e.pointerId);
+          pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+          if (pointers.size === 1) {
+            lastX = e.clientX; lastY = e.clientY;
+            dragging = true;
+            viewport.classList.add('dragging');
+          } else if (pointers.size === 2) {
+            dragging = false;
+            var pts = Array.from(pointers.values());
+            pinchDist = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
+          }
+        });
+
+        viewport.addEventListener('pointermove', function(e) {
+          if (!pointers.has(e.pointerId)) return;
+          pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+          if (pointers.size === 1) {
+            if (!dragging) return;
+            tx += e.clientX - lastX;
+            ty += e.clientY - lastY;
+            lastX = e.clientX; lastY = e.clientY;
+            clampPan();
+            render();
+          } else if (pointers.size === 2) {
+            var pts = Array.from(pointers.values());
+            var newDist = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
+            if (pinchDist > 0 && newDist > 0) {
+              var r = viewport.getBoundingClientRect();
+              zoomAt((pts[0].x + pts[1].x) / 2 - r.left, (pts[0].y + pts[1].y) / 2 - r.top, newDist / pinchDist);
+            }
+            pinchDist = newDist;
+          }
+        });
+
+        function endPointer(e) {
+          pointers.delete(e.pointerId);
+          if (pointers.size === 1) {
+            var p = Array.from(pointers.values())[0];
+            lastX = p.x; lastY = p.y;
+            dragging = true;
+          } else if (pointers.size === 0) {
+            dragging = false;
+            viewport.classList.remove('dragging');
+          }
+        }
+        viewport.addEventListener('pointerup', endPointer);
+        viewport.addEventListener('pointercancel', endPointer);
+
+        viewport.addEventListener('dblclick', function(e) {
+          var r = viewport.getBoundingClientRect();
+          zoomAt(e.clientX - r.left, e.clientY - r.top, 2);
+        });
+
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') {
+            if (isOpen) { closeModal(); return; }
+            var lightbox = document.querySelector('.image-modal.active');
+            if (lightbox) lightbox.classList.remove('active');
+            return;
+          }
+          if (!isOpen) return;
+          if (e.key === '+' || e.key === '=') zoomIn.click();
+          else if (e.key === '-') zoomOut.click();
+        });
+
+        window.addEventListener('resize', function() {
+          if (isOpen && img.naturalWidth > 0) { init(); clampPan(); render(); }
+        });
+      });
+    </script>
   </body>
 </html>
