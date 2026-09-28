@@ -26,15 +26,15 @@ Activate this skill when the user wants to:
 Las imágenes se almacenan en `src/docs/img/actualizaciones/` con el patrón:
 
 ```
-img_1.jpg  →  img_23.jpg  (existentes)
-img_24.jpg  →  img_N.jpg  (nuevas, continuar la numeración)
+img_1.jpg  →  img_22.jpg  (existentes)
+img_23.jpg  →  img_N.jpg  (nuevas, continuar la numeración)
 ```
 
 **IMPORTANTE**: Antes de crear una nueva publicación, verificar cuál es el último número usado en la carpeta `src/docs/img/actualizaciones/` y usar el siguiente número consecutivo. No reutilizar números existentes.
 
 Desde la página HTML, la ruta de la imagen es relativa:
 ```html
-<img src="../docs/img/actualizaciones/img_24.jpg" alt="descripción" />
+<img src="../docs/img/actualizaciones/img_23.jpg" alt="descripción" />
 ```
 
 ## Categorías Disponibles
@@ -69,7 +69,7 @@ Cada noticia es un `<article class="noticia-card">` con los siguientes atributos
 
 ### Atributos `data-*`
 
-- **`data-id`**: Identificador único. Seguir la secuencia `noticia26`, `noticia27`, etc. (último usado: `noticia25`).
+- **`data-id`**: Identificador único. Seguir la secuencia `noticia25`, `noticia26`, etc. (último usado: `noticia24`).
 - **`data-category`**: Una de las categorías listadas arriba.
 - **`data-title`**: Título exacto que aparecerá en el `<h3>` (usado por filtros y búsqueda) y en el modal.
 
@@ -132,9 +132,9 @@ Copiar la imagen de la nueva publicación a `src/docs/img/actualizaciones/img_NN
 ## Ejemplo Completo
 
 ```html
-<article class="noticia-card" data-id="noticia26" data-category="consulta" data-title="Plan Maynas lanza nueva etapa de participación ciudadana">
+<article class="noticia-card" data-id="noticia25" data-category="consulta" data-title="Plan Maynas lanza nueva etapa de participación ciudadana">
   <div class="noticia-imagen">
-    <img src="../docs/img/actualizaciones/img_24.jpg" alt="Participación ciudadana Plan Maynas" />
+    <img src="../docs/img/actualizaciones/img_23.jpg" alt="Participación ciudadana Plan Maynas" />
   </div>
   <div class="noticia-fecha">05 Junio 2026</div>
   <h3>Plan Maynas lanza nueva etapa de participación ciudadana</h3>
